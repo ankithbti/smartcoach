@@ -1,0 +1,33 @@
+<div class="well-course">
+	<h4><%= course.title %>
+      	<!-- <img src="images/dmbtest.gif" width="45px" height="45px" /> -->
+      	<%= link_to image_tag("homeOnline.jpg", width: "30", height: "30")%>
+    </h4>
+ 	<div class="clearfix">
+ 	</div>
+  	<div class="entry-meta">
+        <span class="meta-author">
+        	<a href="#" title="#" rel="author"><%= course.author %></a>
+        </span>
+        <span class="meta-published"><%= course.created_at %></span>
+
+        <span class="meta-categories"><a href="#" title="#"><%= course.category %></a> 
+        	<!-- <span class="cat-sep">\</span>
+        	<a href="#" title="#"><%= course.category %></a> -->
+    	</span>              
+  	</div>
+  	<div class="clearfix"></div>
+  	<div class="entry-wrap">
+    	<div class="entry-thumbnail">
+        	<a title="#" href="#">
+            <!-- <img src="math.jpg" width="100" height="100"> -->
+            <%= link_to image_tag("#{course.image}", border: 0, width: "100", height: "100")%>
+        	</a>
+    	</div><!-- end .entry-thumbnail -->
+        <div class="entry-content has-post-image">
+          <p class="muted"><%= course.desc %></p>
+          <button class="btn btn-primary btn-success" type="button">Join to Access</button>
+        </div><!-- end .entry-content -->         
+  	</div>
+  	<div class="clearfix"></div>
+</div>

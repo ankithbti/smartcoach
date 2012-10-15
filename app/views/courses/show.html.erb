@@ -1,0 +1,88 @@
+<% provide(:title, 'Courses') %>
+<div class="container">
+      <div class="row">
+        <ul class="nav nav-pills .pull-right">
+          <li class="active">
+            <%= link_to "Courses", root_path %>
+          </li>
+          <li><%= link_to "Tutorials", '#' %></li>
+          <li><%= link_to "Blog", '#' %></li>
+      </ul>
+      </div>
+
+      <div class="row">
+        <div class="span8">
+            <ul class="breadcrumb">
+              <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+              <li class="active">Courses</li>
+            </ul>
+
+            <div class="well">
+                <button id="createCourse" class="btn btn-info movetoright" type="button">Add new Course</button>
+        				<%= will_paginate %>
+                      <%= render @courses %>
+                <%= will_paginate %>
+                <button id="createCourse" class="btn btn-info movetoright" type="button">Add new Course</button>
+                <div class="clearfix"></div>
+            </div>
+        </div><!-- <div class="span8"> -->
+
+        <div class="span3">
+            <div class="well-1">
+
+                <form class="navbar-search pull-left">
+                  <input type="text" class="search-query" placeholder="Search">
+                </form>
+                <div class="clearfix"></div>
+
+                <div class="categories">
+                    <!-- <span class="badge badge-info">Categories</span> -->
+
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="#">Categories:</a>
+                      </li>
+                      
+                    </ul>
+                    <ul class="nav nav-list">
+                      <li class="nav-header"></li>
+                      <li class="active"><a href="#">All</a></li>
+                      <li><a href="#">Web development</a></li>
+                      <li><a href="#">Maths</a></li>
+                      <li><a href="#">Physics</a></li>
+                      <li><a href="#">Ruby</a></li>
+                      <li><a href="#">Java</a></li>
+                      <li><a href="#">C++</a></li>
+                      <li><a href="#">Oracle</a></li>
+                      <li><a href="#">MySql</a></li>
+                      <li><a href="#">Python</a></li>
+                      <li><a href="#">Html</a></li>
+                      <li><a href="#">Css</a></li>
+                      <li><a href="#">Jquery</a></li>         
+                    </ul>
+                </div>
+                <div class="upcoming">
+                    <!-- <span class="badge badge-info">Categories</span> -->
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="#">Upcoming Courses:</a>
+                      </li>
+                      
+                    </ul>
+                    <div class="upcoming-widget">
+                      <div class="widget-thumbnail">
+                        <!-- <img src="homeOnline.jpg" width="70px" height="100px"> -->
+                        <!--#link_to image_tag("homeOnline.jpg", border 0), {action: '#', controller: '#'},class: '#'-->
+                        <%= link_to image_tag("homeOnline.jpg", border: 0)%>
+                      </div><!-- end .widget-thumbnail -->
+                      <div class="widget-body">
+                        <h4>SQL Essentials</h4>
+                        <span class="label label-info">December</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                </div>
+          </div>
+        </div><!-- <div class="span3"> -->
+      </div><!-- <div class="row"> -->
+</div><!-- <div class="container"> -->

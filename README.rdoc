@@ -1,3 +1,7 @@
 This is a smartcoach website code.
 Currently it is in development phase.
 Later on this will be a part of our LMS system.
+Environment used to build this app:
+Ruby: 1.9.3 p 194
+Rails: 3.2.8
+Gem: 1.8.24
