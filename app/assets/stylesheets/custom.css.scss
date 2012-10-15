@@ -1,0 +1,115 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Marcellus);
+
+/* mixins, variables, etc. */
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.align-center { text-align: center; }
+.align-justify { text-align: justify; }
+
+.push-down { margin-bottom: 1em; }
+.push-left { margin-left: 1em; }
+.push-right { margin-right: 1em; }
+.push-up { margin-top: 1em; }
+
+@media(min-width: 980px) {
+  .navbar-fixed-top + * {
+    margin-top: 60px;
+  }
+
+  .navbar-fixed-bottom + *{
+    margin-bottom: 60px;
+  }
+}
+
+.home-heading span{
+  font-family: 'Marcellus';
+  font-size: 200%;
+  color: #006CCC;
+}
+
+.home-heading p{
+  font-family: 'Droid Serif', serif;
+font-weight: normal;
+font-size: 1.90em;
+line-height: 1.25;
+font-weight: 300;
+margin-top: .25em;
+color: #839FA5;
+font-align: justify;
+}
+
+
+/* footer */
+.footer {
+margin-top: 45px;
+padding-top: 5px;
+border-top: 1px solid #eaeaea;
+color: #777;
+}
+.footer a {
+color: #777;
+}
+
+.footer a:hover {
+color: #3A87AD;
+}
+
+.blue{
+  color: #3A87AD;
+  font-family: 'Droid Serif', serif;
+}
+
+.footer big {
+float: left;
+}
+.footer ul {
+float: right;
+list-style: none;
+}
+.footer ul li {
+float: left;
+margin-left: 10px;
+}
+
+
+
+.navbar .navbar-inner a:hover{
+      color: #3A87AD;
+
+    }
+
+    .curr{
+      color: #3A87AD;
+    }
+
+    .ourvideo{
+      width:520px;
+      padding-top:8px;
+      margin:0px;
+      /*background-color: #3A87AD;*/
+      -webkit-box-shadow: 0 8px 6px -6px #3A87AD;
+     -moz-box-shadow: 0 8px 6px -6px #3A87AD;
+          box-shadow: 0 8px 6px -6px #3A87AD;
+          /*-moz-box-shadow:    inset 0 0 10px #3A87AD;
+        -webkit-box-shadow: inset 0 0 10px #3A87AD;
+      box-shadow: inset 0 0 10px #3A87AD;*/
+
+    }
+
+    .video-me{
+      margin:5px;
+
+    }
