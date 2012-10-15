@@ -18,11 +18,18 @@
             </ul>
 
             <div class="well">
-                <button id="createCourse" class="btn btn-info movetoright" type="button">Add new Course</button>
+                <button id="createCoursetop" class="btn btn-info movetoright" type="button">Add new Course</button>
         				<%= will_paginate %>
                       <%= render @courses %>
                 <%= will_paginate %>
-                <button id="createCourse" class="btn btn-info movetoright" type="button">Add new Course</button>
+                <% count = 0 %>
+                <% @courses.each do |course| %>
+                  <% if course.id == 3 %>
+                    <button id="createCoursebottom" class="btn btn-info movetoright" type="button">Add new Course
+                    </button>
+                  <% end %>
+                <% end %>
+                
                 <div class="clearfix"></div>
             </div>
         </div><!-- <div class="span8"> -->

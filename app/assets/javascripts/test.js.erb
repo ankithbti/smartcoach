@@ -1,10 +1,15 @@
 $(function(){
-	$('#startCourse').click(function(){
-		var root = location.protocol + "//" + location.host + "/courses_show";
+	$('#createCoursetop').click(function(){
+		var root = location.protocol + "//" + location.host + "/course_create";
 		window.location = root ;
 	});
-	$('#createCourse').click(function(){
+	$('#createCoursebottom').click(function(){
 		var root = location.protocol + "//" + location.host + "/course_create";
+		window.location = root ;
+	});
+
+	$('#showCourse').click(function(){
+		var root = location.protocol + "//" + location.host + "/courses_show";
 		window.location = root ;
 	});
 	
