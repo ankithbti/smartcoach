@@ -11,13 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015131824) do
+ActiveRecord::Schema.define(:version => 20121017202019) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.string   "author"
     t.integer  "course_id"
-    t.string   "category"
     t.string   "image"
     t.string   "desc"
     t.datetime "created_at", :null => false
@@ -25,5 +30,18 @@ ActiveRecord::Schema.define(:version => 20121015131824) do
   end
 
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "topic_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

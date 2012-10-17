@@ -1,4 +1,6 @@
 Smartcoach::Application.routes.draw do
+  #get "topics/name:string"
+
   # get "screens/home"
 
   # get "screens/about"
@@ -12,6 +14,7 @@ Smartcoach::Application.routes.draw do
   # get "screens/construction"
 
   resources :courses
+  resources :topics
   
   root :to => 'screens#home'
   match '/about', :to => 'screens#about'

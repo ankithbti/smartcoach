@@ -1,7 +1,9 @@
 <div class="well-course">
+  <p style="float:right"><%= link_to "Edit topic", edit_course_path(course) %></p>
+  
 	<h4><%= course.title %>
       	<!-- <img src="images/dmbtest.gif" width="45px" height="45px" /> -->
-      	<%= link_to image_tag("homeOnline.jpg", width: "30", height: "30")%>
+      	<%= link_to image_tag("#{course.image}", width: "30", height: "30")%>
     </h4>
  	<div class="clearfix">
  	</div>
@@ -10,10 +12,14 @@
         	<a href="#" title="#" rel="author"><%= course.author %></a>
         </span>
         <span class="meta-published"><%= course.created_at %></span>
-
-        <span class="meta-categories"><a href="#" title="#"><%= course.category %></a> 
-        	<!-- <span class="cat-sep">\</span>
-        	<a href="#" title="#"><%= course.category %></a> -->
+        <span class="meta-categories">
+        <% course.topics.each do |topic| %>
+          <a href="#" title="#"><%= topic.name %></a>
+            <% if course.topics.last.name == topic.name %>
+            <% else %>
+              <span class="cat-sep">\</span>
+            <% end %>
+        <% end %>
     	</span>              
   	</div>
   	<div class="clearfix"></div>

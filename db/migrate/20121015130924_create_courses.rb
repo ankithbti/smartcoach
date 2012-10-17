@@ -9,5 +9,7 @@ class CreateCourses < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :relationships, :course_id
+    add_index :relationships, :topic_id
   end
 end
