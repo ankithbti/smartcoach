@@ -8,8 +8,8 @@ class CreateTutorials < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :groupings, :group_id
-    add_index :groupings, :tutorial_id
+    # add_index :groupings, :group_id
+    # add_index :groupings, :tutorial_id
   end
 
 end
