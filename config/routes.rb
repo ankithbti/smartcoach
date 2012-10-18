@@ -15,6 +15,9 @@ Smartcoach::Application.routes.draw do
 
   resources :courses
   resources :topics
+  resources :tutorials
+  resources :groups
+  resources :under_constructions
   
   root :to => 'screens#home'
   match '/about', :to => 'screens#about'
@@ -25,6 +28,9 @@ Smartcoach::Application.routes.draw do
 
   match '/courses_show', :to => 'courses#show'
   match '/course_create', :to => 'courses#new'
+
+  match '/tutorials_show', :to => 'tutorials#show'
+  match '/tutorial_create', :to => 'tutorials#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

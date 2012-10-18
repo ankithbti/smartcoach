@@ -10,4 +10,12 @@ module ApplicationHelper
 		end
 		end
 
+		def check_null(str)
+			if str.empty?
+				true
+			else
+				false
+			end
+		end
+
 end

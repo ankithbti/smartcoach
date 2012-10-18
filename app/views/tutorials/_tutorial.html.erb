@@ -1,0 +1,39 @@
+<div class="well-course">
+  <p style="float:right"><%= link_to "Edit Tutorial", edit_tutorial_path(tutorial) %></p>
+  
+	<h4><%= tutorial.title %>
+      	<!-- <img src="images/dmbtest.gif" width="45px" height="45px" /> -->
+      	<%= link_to image_tag("#{tutorial.image}", width: "30", height: "30")%>
+    </h4>
+ 	<div class="clearfix">
+ 	</div>
+  	<div class="entry-meta">
+        <span class="meta-author">
+        	<a href="#" title="#" rel="author"><%= tutorial.author %></a>
+        </span>
+        <span class="meta-published"><%= tutorial.created_at %></span>
+        <span class="meta-categories">
+        <% tutorial.groups.each do |group| %>
+          <a href="#" title="#"><%= group.name %></a>
+            <% if tutorial.groups.last.name == group.name %>
+            <% else %>
+              <span class="cat-sep">\</span>
+            <% end %>
+        <% end %>
+    	</span>              
+  	</div>
+  	<div class="clearfix"></div>
+  	<div class="entry-wrap">
+    	<div class="entry-thumbnail">
+        	<a title="#" href="#">
+            <!-- <img src="math.jpg" width="100" height="100"> -->
+            <%= link_to image_tag("#{tutorial.image}", border: 0, width: "100", height: "100")%>
+        	</a>
+    	</div><!-- end .entry-thumbnail -->
+        <div class="entry-content has-post-image">
+          <p class="muted"><%= tutorial.desc %></p>
+          <button class="btn btn-primary btn-success" type="button">Subscribe to Learn</button>
+        </div><!-- end .entry-content -->         
+  	</div>
+  	<div class="clearfix"></div>
+</div>

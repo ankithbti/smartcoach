@@ -6,6 +6,20 @@
 /* mixins, variables, etc. */
 $grayMediumLight: #eaeaea;
 
+#pointout{
+  background: url('arrow.png') no-repeat right top;
+  position: absolute;
+  top:50px;
+  left:10px;
+  width:50px;
+  height:50px;
+}
+
+.pointing-image{
+  position: absolute;
+  top:25px;left:280px;
+}
+
 @mixin box_sizing {
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;

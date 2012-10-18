@@ -1,11 +1,11 @@
-<% provide(:title, 'Courses') %>
+<% provide(:title, 'Tutorials') %>
 <div class="container">
       <div class="row">
         <ul class="nav nav-pills .pull-right">
-          <li class="active">
+          <li>
             <%= link_to "Courses", courses_path %>
           </li>
-          <li><%= link_to "Tutorials", tutorials_path %></li>
+          <li class="active"><%= link_to "Tutorials", tutorials_path %></li>
           <li><%= link_to "Blog", '#' %></li>
       </ul>
       </div>
@@ -14,18 +14,18 @@
         <div class="span8">
             <ul class="breadcrumb">
               <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-              <li class="active">Courses</li>
+              <li class="active">Tutorials</li>
             </ul>
 
             <div class="well">
-                <button id="createCoursetop" class="btn btn-info movetoright" type="button">Add new Course</button>
+                <button id="createTutorialtop" class="btn btn-info movetoright" type="button">Add new Tutorial</button>
         				<%= will_paginate %>
-                      <%= render @courses %>
+                      <%= render @tutorials %>
                 <%= will_paginate %>
                 
-                <% @courses.each do |course| %>
-                  <% if ((course.id % @countCoursesPerPage) == 0 ) %>
-                    <button id="createCoursebottom" class="btn btn-info movetoright" type="button">Add new Course
+                <% @tutorials.each do |tutorial| %>
+                  <% if ((tutorial.id % @countTutorialsPerPage) == 0 ) %>
+                    <button id="createTutorialbottom" class="btn btn-info movetoright" type="button">Add new Tutorial
                     </button>
                   <% end %>
                 <% end %>
@@ -54,22 +54,21 @@
                     <ul class="nav nav-list">
                       <li class="nav-header"></li>
                       <li class="active"><a href="#">All</a></li>
-                      <% @topics.each do |topic| %>
-                        <li><a href="#"><%= topic.name %></a></li>
+                      <% @groups.each do |group| %>
+                        <li><a href="#"><%= group.name %></a></li>
                       <% end %>
                       
                     </ul>
                     <br/>
-                    <!-- <button id="createTopicbottom" class="btn btn-info" type="button">Add new Topic
-                    </button> -->
-                    <button id="manageTopicbottom" class="btn btn-info" type="button">Manage Topics
+                    
+                    <button id="manageGroupbottom" class="btn btn-info" type="button">Manage Groups
                     </button>
                 </div>
                 <div class="upcoming">
                     <!-- <span class="badge badge-info">Categories</span> -->
                     <ul class="nav nav-tabs">
                       <li class="active">
-                        <a href="#">Upcoming Courses:</a>
+                        <a href="#">Upcoming Tutorials:</a>
                       </li>
                       
                     </ul>
@@ -77,11 +76,11 @@
                       <div class="widget-thumbnail">
                         <!-- <img src="homeOnline.jpg" width="70px" height="100px"> -->
                         <!--#link_to image_tag("homeOnline.jpg", border 0), {action: '#', controller: '#'},class: '#'-->
-                        <%= link_to image_tag("homeOnline.jpg", border: 0)%>
+                        <%= link_to image_tag("image.jpg", border: 0)%>
                       </div><!-- end .widget-thumbnail -->
                       <div class="widget-body">
                         <h4>SQL Essentials</h4>
-                        <span class="label label-info">December</span>
+                        <span class="label label-info">October</span>
                       </div>
                       <div class="clearfix"></div>
                     </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017202019) do
+ActiveRecord::Schema.define(:version => 20121018181802) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(:version => 20121017202019) do
 
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
 
+  create_table "groupings", :force => true do |t|
+    t.integer  "tutorial_id"
+    t.integer  "group_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "relationships", :force => true do |t|
     t.integer  "course_id"
     t.integer  "topic_id"
@@ -43,5 +56,16 @@ ActiveRecord::Schema.define(:version => 20121017202019) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "tutorials", :force => true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "image"
+    t.string   "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tutorials", ["title", "author"], :name => "index_tutorials_on_title_and_author", :unique => true
 
 end
