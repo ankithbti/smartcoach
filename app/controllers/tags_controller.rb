@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
 	def index
-    @tags = Tag.order(:name)
+    @tags = Tag.order(:name).search(params[:search])
   end
 
   def show
