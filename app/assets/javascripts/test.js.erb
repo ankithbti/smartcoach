@@ -67,6 +67,11 @@ $(function(){
 		$(this).css("width", "100%");
 		//alert('hi') 
 	} );
+
+	$("#tags_search input").keyup(function(){
+		$.get($("#tags_search").attr("action"), $("#tags_search").serialize(), null, "script");
+		return false;
+	});
 	
 	// $('#editCoursetop').click(function(){
 	// 	var root = location.protocol + "//" + location.host + "/topics";
