@@ -36,6 +36,7 @@ class TutorialsController < ApplicationController
 
 
 	def show
+		@tutorial = Tutorial.find(params[:id])
 		# Just to redirect, needed due to button click event
 		# @courses = Course.paginate(page: params[:page], per_page: 3)
 		# @topics = Topic.all

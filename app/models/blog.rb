@@ -1,26 +1,25 @@
 # == Schema Information
 #
-# Table name: tutorials
+# Table name: blogs
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
 #  author     :string(255)
-#  image      :string(255)
-#  desc       :string(255)
+#  content    :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Tutorial < ActiveRecord::Base
-  attr_accessible :author, :desc, :image, :title, :group_ids
-  has_many :groupings
-  has_many :groups, through: :groupings
+class Blog < ActiveRecord::Base
+  attr_accessible :title, :author, :content, :tag_ids
+
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   #before_save { |course| course.category = category.downcase }
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :author, presence: true, length: { maximum: 20 }
-  validates :desc, presence: true, length: { maximum: 100 }
 
-  default_scope order: 'tutorials.created_at DESC'
+  default_scope order: 'blogs.created_at DESC'
 end

@@ -1,18 +1,6 @@
 Smartcoach::Application.routes.draw do
-  #get "topics/name:string"
-
-  # get "screens/home"
-
-  # get "screens/about"
-
-  # get "screens/faq"
-
-  # get "screens/privacy"
-
-  # get "screens/terms"
-
-  # get "screens/construction"
-
+  resources :blogs
+  resources :tags
   resources :courses
   resources :topics
   resources :tutorials

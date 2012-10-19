@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: tags
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
@@ -8,8 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-class Group < ActiveRecord::Base
-  attr_accessible :name
-  has_many :groupings
-  has_many :tutorials, through: :groupings
+class Tag < ActiveRecord::Base
+	attr_accessible :name
+  has_many :taggings
+  has_many :blogs, through: :taggings
 end

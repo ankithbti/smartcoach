@@ -27,6 +27,11 @@ $(function(){
 		window.location = root ;
 	});
 
+	$('#showBlog').click(function(){
+		var root = location.protocol + "//" + location.host + "/blogs";
+		window.location = root ;
+	});
+
 	
 	// $('#createTopicbottom').click(function(){
 	// 	var root = location.protocol + "//" + location.host + "/topics/new";
@@ -45,7 +50,23 @@ $(function(){
 		window.location = root ;
 	});
 
+	
+	$('#manageTagsbottom').click(function(){
+		var root = location.protocol + "//" + location.host + "/tags";
+		window.location = root ;
+	});
 
+	$('#mysearch').css("width", "100%");
+
+	$('#mysearch').bind('focus', function() { 
+		$(this).css("width", "150%");
+		//alert('hi') 
+	} );
+
+	$('#mysearch').bind('blur', function() { 
+		$(this).css("width", "100%");
+		//alert('hi') 
+	} );
 	
 	// $('#editCoursetop').click(function(){
 	// 	var root = location.protocol + "//" + location.host + "/topics";

@@ -19,6 +19,11 @@ $grayMediumLight: #eaeaea;
   position: absolute;
   top:25px;left:280px;
 }
+.pointing-image-1{
+  position: relative;
+  top:-10px;
+  height:40px;
+}
 
 @mixin box_sizing {
 -moz-box-sizing: border-box;

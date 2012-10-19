@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: taggings
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
+#  blog_id    :integer
+#  tag_id     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Group < ActiveRecord::Base
-  attr_accessible :name
-  has_many :groupings
-  has_many :tutorials, through: :groupings
+class Tagging < ActiveRecord::Base
+  belongs_to :blog
+  belongs_to :tag
 end
