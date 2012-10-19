@@ -6,7 +6,8 @@ class NewsletterMailer < ActionMailer::Base
   #
   #   en.newsletter_mailer.weekly.subject
   #
-  def weekly(email)
-    mail to: email, subject: "Test Mail from Rails App"
+  def weekly(email, mess)
+    @greeting = "Thanks for using SmartApp"
+    mail to: email, subject: mess
   end
 end

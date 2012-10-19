@@ -15,7 +15,10 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(params[:blog])
     if @blog.save
-      redirect_to @blog, :notice => "Successfully created blog."
+      flash[:success] = "Blog added successfully!!!!"
+      NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
+      redirect_to @blog
+
     else
       render :action => 'new'
     end
@@ -28,7 +31,9 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update_attributes(params[:blog])
-      redirect_to @blog, :notice  => "Successfully updated blog."
+      flash[:success] = "Blog updated successfully!!!!"
+      NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
+      redirect_to @blog
     else
       render :action => 'edit'
     end
@@ -37,6 +42,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_url, :notice => "Successfully destroyed blog."
+    flash[:success] = "Successfully destroyed blog."
+    redirect_to blogs_url
   end
 end
