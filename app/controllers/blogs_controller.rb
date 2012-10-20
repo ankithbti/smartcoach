@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(params[:blog])
     if @blog.save
       flash[:success] = "Blog added successfully!!!!"
-      NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
+      # NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
       redirect_to @blog
 
     else
@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     if @blog.update_attributes(params[:blog])
       flash[:success] = "Blog updated successfully!!!!"
-      NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
+      # NewsletterMailer.weekly("ankithbti007@gmail.com", flash[:success]).deliver
       redirect_to @blog
     else
       render :action => 'edit'

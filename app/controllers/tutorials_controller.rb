@@ -15,7 +15,7 @@ class TutorialsController < ApplicationController
 		@tutorial = Tutorial.new(params[:tutorial])
 		if @tutorial.save
 			flash[:success] = "Tutorial added successfully!!!!"
-			redirect_to tutorials_show_path
+			redirect_to @tutorial
 		else
 			render 'new'
 		end
@@ -42,4 +42,11 @@ class TutorialsController < ApplicationController
 		# @topics = Topic.all
 		#@courses = Course.all
 	end
+
+	def destroy
+	    @tutorial = Tutorial.find(params[:id])
+	    @tutorial.destroy
+	    flash[:success] = "Successfully destroyed tutorial."
+	    redirect_to tutorials_url
+  	end
 end

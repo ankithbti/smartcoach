@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
 		@course = Course.new(params[:course])
 		if @course.save
 			flash[:success] = "Course added successfully!!!!"
-			redirect_to courses_show_path
+			redirect_to @course
 		else
 			render 'new'
 		end
@@ -44,4 +44,11 @@ class CoursesController < ApplicationController
 		# @topics = Topic.all
 		#@courses = Course.all
 	end
+
+	def destroy
+	    @course = Course.find(params[:id])
+	    @course.destroy
+	    flash[:success] = "Successfully destroyed course."
+	    redirect_to courses_url
+  	end
 end

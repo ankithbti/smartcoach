@@ -20,7 +20,10 @@
 <%= f.collection_select :topic_ids, Topic.order(:name), :id, :name, {}, {multiple: true} %>
 
 <br/><br/>
-<%= f.submit "Create Course", class: "btn btn-large btn-info" %>
+<p><%= f.submit %></p>
 <% end %>
 </div>
 </div>
+<center>
+<p><%= link_to "Back to Courses", courses_path %></p>
+</center>

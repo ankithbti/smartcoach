@@ -14,11 +14,11 @@ Smartcoach::Application.routes.draw do
   match '/faq', :to => 'screens#faq'
   match '/construction', :to => 'screens#construction'
 
-  match '/courses_show', :to => 'courses#show'
-  match '/course_create', :to => 'courses#new'
+  # match '/courses_show', :to => 'courses#show'
+  # match '/course_create', :to => 'courses#new'
 
-  match '/tutorials_show', :to => 'tutorials#show'
-  match '/tutorial_create', :to => 'tutorials#new'
+  # match '/tutorials_show', :to => 'tutorials#show'
+  # match '/tutorial_create', :to => 'tutorials#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

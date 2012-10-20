@@ -20,7 +20,10 @@
 <%= f.collection_select :group_ids, Group.order(:name), :id, :name, {}, {multiple: true} %>
 
 <br/><br/>
-<%= f.submit "Create Tutorial", class: "btn btn-large btn-info" %>
+<p><%= f.submit %></p>
 <% end %>
 </div>
 </div>
+<center>
+<p><%= link_to "Back to Tutorials", tutorials_path %></p>
+</center>
