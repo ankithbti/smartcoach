@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020053042) do
+ActiveRecord::Schema.define(:version => 20121020133753) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20121020053042) do
     t.string   "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
@@ -96,6 +97,10 @@ ActiveRecord::Schema.define(:version => 20121020053042) do
     t.string   "password_digest"
     t.integer  "user_type"
     t.integer  "sub_plan"
+    t.text     "user_desc"
+    t.string   "remember_token"
   end
+
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
