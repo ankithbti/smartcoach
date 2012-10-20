@@ -18,48 +18,20 @@
               <li class="active">Blogs</li>
             </ul>
 
-            
-            
             <% if @blogs.count < 1 %>
               <div class="alert alert-success">
                   Be the First one to Write the First Blog!!!!
               </div>
-              <% else %>
-                <p><%= link_to "Add New Blog", new_blog_path , class: "move-to-right-top"%></p>
-                <div class="clearfix"></div>
-            <% end %>
-            <% for blog in @blogs %>
-              
-              <div id="blogstack">
-                <div id="toppart"></div>
-                <h1><%= link_to blog.title, blog %></h1>
-                
-                <div class="entry-meta">
-                  <span class="meta-author">
-                    <a href="#" title="#" rel="author"><%= blog.author %></a>
-                  </span>
-                  <span class="meta-published"><%= blog.created_at %></span>
-                  <span class="meta-categories">
-                    <% blog.tags.each do |tag| %>
-                      <a href="#" title="#"><%= tag.name %></a>
-                        <% if blog.tags.last.name == tag.name %>
-                        <% else %>
-                          <span class="cat-sep">\</span>
-                        <% end %>
-                    <% end %>
-                  </span>
-                  <p style="float:right;margin:0px;">
-                  <%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %> | 
-                  <%= link_to "Edit", edit_blog_path(blog) %>
-                </p>
-                <div class="clearfix"></div>
-              </div>
-                <div class="clearfix"></div>
-
-              </div>
-              <div class="clearfix"></div>
-            <% end %>
-            <p><%= link_to "Add New Blog", new_blog_path , class: "move-to-right-bottom"%></p>
+            <% else %>
+                <%= form_tag blogs_path, method: "get", id: "blogs_search", html: { class: 'form-horizontal' } do %>
+                  <p>
+                    <%= text_field_tag :search, params[:search], class: 'text_field', placeholder: "Enter your search string to find the blog by it's title", autocomplete: "off"  %>
+                  </p>
+                  <p><%= link_to "Add New Blog", new_blog_path , class: "move-to-right-top"%></p>
+                  <div class="clearfix"></div>
+                  <div id="blogs"><%= render 'blogs' %></div>
+                <% end %> <!-- end of form -->
+            <% end %><!-- end of if condition -->
             
         </div><!-- <div class="span8"> -->
 

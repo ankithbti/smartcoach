@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all
+    @blogs = Blog.search(params[:search])
     @tags = Tag.all
   end
 

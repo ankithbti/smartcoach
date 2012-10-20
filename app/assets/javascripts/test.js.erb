@@ -66,10 +66,15 @@ $(function(){
 	$('#mysearch').bind('blur', function() { 
 		$(this).css("width", "100%");
 		//alert('hi') 
-	} );
+	});
 
 	$("#tags_search input").keyup(function(){
 		$.get($("#tags_search").attr("action"), $("#tags_search").serialize(), null, "script");
+		return false;
+	});
+
+	$("#blogs_search input").keyup(function(){
+		$.get($("#blogs_search").attr("action"), $("#blogs_search").serialize(), null, "script");
 		return false;
 	});
 	

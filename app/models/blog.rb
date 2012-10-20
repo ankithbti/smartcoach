@@ -22,4 +22,12 @@ class Blog < ActiveRecord::Base
   validates :author, presence: true, length: { maximum: 20 }
 
   default_scope order: 'blogs.created_at DESC'
+
+  def self.search(search)
+  	if search
+      find(:all, conditions: ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end
