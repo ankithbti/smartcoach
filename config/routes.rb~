@@ -18,11 +18,11 @@ Smartcoach::Application.routes.draw do
   match '/faq', :to => 'screens#faq'
   match '/construction', :to => 'screens#construction'
 
-  # match '/courses_show', :to => 'courses#show'
-  # match '/course_create', :to => 'courses#new'
+  match '/courses_show', :to => 'courses#show'
+  match '/course_create', :to => 'courses#new'
 
-  # match '/tutorials_show', :to => 'tutorials#show'
-  # match '/tutorial_create', :to => 'tutorials#new'
+  match '/tutorials_show', :to => 'tutorials#show'
+  match '/tutorial_create', :to => 'tutorials#new'
 
   match '/signup', :to =>'users#new'
   match '/signin', to: 'sessions#new'

@@ -7,7 +7,6 @@
           </li>
           <li><%= link_to "Tutorials", tutorials_path %></li>
           <li><%= link_to "Blog", blogs_path %></li>
-	<li><%= link_to "Tutors/Authors", users_path %></li>
       </ul>
       </div>
 
@@ -19,14 +18,15 @@
             </ul>
 
             <div class="well">
-                <p><%= link_to "Add New Course", new_course_path , class: "move-to-right-top"%></p>
+                <button id="createCoursetop" class="btn btn-info movetoright" type="button">Add new Course</button>
         				<%= will_paginate %>
                       <%= render @courses %>
                 <%= will_paginate %>
                 
                 <% @courses.each do |course| %>
                   <% if ((course.id % @countCoursesPerPage) == 0 ) %>
-                    <p><%= link_to "Add New Course", new_course_path , class: "move-to-right-bottom"%></p>
+                    <button id="createCoursebottom" class="btn btn-info movetoright" type="button">Add new Course
+                    </button>
                   <% end %>
                 <% end %>
                 

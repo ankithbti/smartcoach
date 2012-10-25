@@ -1,0 +1,83 @@
+<% provide(:title, @user.name) %>
+<div class="container">
+
+	<div class="row">
+	 <aside class="span4">
+	  <section>
+	   <h1>
+	    <%= gravatar_for @user %>
+	    <%= @user.name %>
+
+	    </h1>
+		<p> <%= @user.user_desc %> </p>
+          </section>
+         </aside>
+      </div>
+      <div class="row">
+        <ul class="nav nav-pills .pull-right">
+          <li>
+            <%= link_to "Courses", courses_path %>
+          </li>
+          <li><%= link_to "Tutorials", tutorials_path %></li>
+          <li><%= link_to "Blog", blogs_path %></li>
+      </ul>
+   </div>
+
+      <div class="row">
+        <div class="span8">
+            <ul class="breadcrumb">
+              <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+              <li class="active">Courses</li>
+            </ul>
+
+            <div class="well">
+                
+        	<% if @user.courses.any? %>
+			<ol class="microposts">
+				<%= render @courses %>
+			</ol>
+			<%= will_paginate @courses %>
+		<% end %>     
+
+                                
+                <div class="clearfix"></div>
+            </div>
+       	   </div><!-- <div class="span8"> -->
+
+        <div class="span3">
+            <div class="well-1">
+			
+                <form class="navbar-search pull-left">
+                  <input type="text" class="search-query" placeholder="Search">
+                </form>
+
+		<div class="clearfix"></div>
+
+                <div class="categories">
+                    <!-- <span class="badge badge-info">Categories</span> -->
+
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="#">Categories:</a>
+                      </li>
+                      
+                    </ul>
+                    <ul class="nav nav-list">
+                      <li class="nav-header"></li>
+                      <li class="active"><a href="#">All</a></li>
+                      <% @topics.each do |topic| %>
+                        <li><a href="#"><%= topic.name %></a></li>
+                      <% end %>
+                      
+                    </ul>
+                </div>
+		 <div class="clearfix"></div>
+		<div>
+			<button id="createCoursetop" class="btn btn-info" type="button">Add new Course</button>
+		</div>
+
+                
+          </div>
+        </div><!-- <div class="span3"> -->
+      </div><!-- <div class="row"> -->
+</div><!-- <div class="container"> -->

@@ -1,4 +1,4 @@
-<% provide(:title, 'Courses') %>
+<% provide(:title, 'Tutor/Author') %>
 <div class="container">
       <div class="row">
         <ul class="nav nav-pills .pull-right">
@@ -7,7 +7,7 @@
           </li>
           <li><%= link_to "Tutorials", tutorials_path %></li>
           <li><%= link_to "Blog", blogs_path %></li>
-	<li><%= link_to "Tutors/Authors", users_path %></li>
+	 <li><%= link_to "Tutors/Authors", users_path %></li>
       </ul>
       </div>
 
@@ -15,18 +15,19 @@
         <div class="span8">
             <ul class="breadcrumb">
               <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-              <li class="active">Courses</li>
+              <li class="active">Tutors/Authors</li>
             </ul>
 
             <div class="well">
-                <p><%= link_to "Add New Course", new_course_path , class: "move-to-right-top"%></p>
-        				<%= will_paginate %>
-                      <%= render @courses %>
+                
+		<%= will_paginate %>
+                      <%= render @users %>
                 <%= will_paginate %>
                 
                 <% @courses.each do |course| %>
                   <% if ((course.id % @countCoursesPerPage) == 0 ) %>
-                    <p><%= link_to "Add New Course", new_course_path , class: "move-to-right-bottom"%></p>
+                    <button id="createCoursebottom" class="btn btn-info movetoright" type="button">Add new Course
+                    </button>
                   <% end %>
                 <% end %>
                 

@@ -1,0 +1,36 @@
+<div class="well-course">
+    
+	<h4><%= link_to user.name, user %>
+      	 <img src="images/dmbtest.gif" width="45px" height="45px" /> 
+     
+    </h4>
+
+ 	<div class="clearfix"> 	</div>
+
+  	<div class="entry-meta">
+        <span class="meta-author">
+        	<a href="#" title="#" rel="type">
+
+		   <% if user.user_type == 1 %>
+		      Student
+	            <% else %>
+	              Teacher
+	            <% end %>
+		</a>
+        </span>
+        <span class="meta-published"><%= user.created_at %></span>
+      
+  	</div>
+  	<div class="clearfix"></div>
+  	<div class="entry-wrap">
+    	<div class="entry-thumbnail">
+        	<a title="#" href="#"> <img src="math.jpg" width="100" height="100"> </a>
+
+    	</div><!-- end .entry-thumbnail -->
+        <div class="entry-content has-post-image">
+          <p class="muted">user.detail</p>
+          
+        </div><!-- end .entry-content -->         
+  	</div>
+  	<div class="clearfix"></div>
+</div>
