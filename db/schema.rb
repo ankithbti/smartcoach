@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(:version => 20121025213103) do
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.string   "author"
-    t.integer  "course_id"
     t.string   "image"
-    t.text     "desc",       :limit => 255
+    t.text     "desc",
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "user_id"
@@ -41,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20121025213103) do
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
 
   create_table "groupings", :force => true do |t|
-    t.integer  "tutorial_id"
     t.integer  "group_id"
+    t.integer  "tutorial_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
