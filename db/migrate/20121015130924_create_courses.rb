@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :author
       t.string :category
       t.string :image
-      t.string :desc
+      t.text :desc
 
       t.timestamps
     end

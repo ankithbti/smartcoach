@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(:version => 20121025213103) do
     t.string   "title"
     t.string   "author"
     t.string   "image"
-    t.text     "desc",       :limit => 255
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
 
