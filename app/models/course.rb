@@ -21,14 +21,9 @@ class Course < ActiveRecord::Base
 
   #before_save { |course| course.category = category.downcase }
 
-<<<<<<< HEAD
-  
-=======
   validates :title, presence: true, length: { maximum: 50 }
   validates :author, presence: true, length: { maximum: 20 }
   validates :desc, presence: true, length: { maximum: 100 }
-  validates :user_id, presence:true
->>>>>>> fb4bd0f9afbd89cdb619a9f7fda0f18f052d3c4a
 
   default_scope order: 'courses.created_at DESC'
 end

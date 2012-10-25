@@ -11,7 +11,5 @@ class CreateCourses < ActiveRecord::Migration
     end
     add_index :relationships, :course_id
     add_index :relationships, :topic_id
-    add_index :courses, [:user_id, :created_at]
-
   end
 end

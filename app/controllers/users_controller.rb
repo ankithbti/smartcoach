@@ -9,8 +9,7 @@ class UsersController < ApplicationController
 		sign_in @user
 		flash[:success] = "User added successfully!!!!"	
 		redirect_to @user
-	else	
-		
+	else
 		render 'new'		
 	end	
 	

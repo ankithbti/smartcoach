@@ -19,15 +19,12 @@ before_filter :signed_in_user, only: [:create, :edit,:update,:delete]
 		@course = current_user.courses.build(params[:course])
 		if @course.save
 			flash[:success] = "Course added successfully!!!!"
-<<<<<<< HEAD
 			redirect_to @course
-=======
-			redirect_to current_user
->>>>>>> fb4bd0f9afbd89cdb619a9f7fda0f18f052d3c4a
 		else
 			render 'new'
 		end
 	end
+	
 
 	def edit
     	@course = Course.find(params[:id])
