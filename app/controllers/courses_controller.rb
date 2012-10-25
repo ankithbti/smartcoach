@@ -17,6 +17,7 @@ before_filter :signed_in_user, only: [:create, :edit,:update,:delete]
 
 	def create
 		@course = current_user.courses.build(params[:course])
+		@course.user_id = current_user.id
 		if @course.save
 			flash[:success] = "Course added successfully!!!!"
 			redirect_to @course

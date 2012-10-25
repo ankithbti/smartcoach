@@ -1,4 +1,4 @@
-<% provide(:title, 'FAQ') %>
+<% provide(:title, 'Under Construction') %>
 <% provide(:effectingHeader, 'Yes') %>
 <div class="navbar navbar-fixed-top ds-dragover-1" >
      <div class="navbar-inner">
@@ -12,37 +12,51 @@
                 <!-- <li class="active"> -->
                <li>
                
-                  <%= link_to "HOME", root_path %>
+                  <%= link_to "Home", root_path %>
                 </li>
                 <li>
-                  <%= link_to "ABOUT", about_path %>
+                  <%= link_to "About", about_path %>
                 </li>
                 
                 <li class="active">
-                  <%= link_to "FAQ", faq_path %>
+                  <%= link_to "Faq", faq_path %>
                 </li>
-                <li>
-                  <%= link_to "SIGN IN", '#' %>
-                </li>
-                <li>
-                  <%= link_to "SIGN UP", '#' %>
-                </li>
+                <% if signed_in? %>
+                  <li><%= link_to "Users", users_path %></li>
+                  <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Account <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu" id="droplinks">
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li class="divider"></li>
+                  <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                  </li>
+                  </ul>
+                  </li>
+                <% else %>
+                  <li><%= link_to "Sign in", signin_path %></li>
+                  <li>
+                          <%= link_to "Subscribe", signup_path %>
+                      </li>
+                <% end %>
               </ul>
           </div>
         </div>
     </div>
 </div>
 <center>
-	<div class="hero-unit">
-		
-	  <h1>Under Development!!!!!</h1>
-	  <p></p>
-	  	<div class="alert alert-error">
-  			Apologies!!!!! We will be finished soon!!!!!
-	  	</div>
-	    <a class="btn btn-primary btn-large">
-	      Check out our other stuff here ->
-	    </a>
-	  </p>
-	</div>
+  <div class="hero-unit">
+    
+    <h1>Under Development!!!!!</h1>
+    <p></p>
+      <div class="alert alert-error">
+        Apologies!!!!! We will be finished soon!!!!!
+      </div>
+      <a class="btn btn-primary btn-large">
+        Check out our other stuff here ->
+      </a>
+    </p>
+  </div>
 </center>

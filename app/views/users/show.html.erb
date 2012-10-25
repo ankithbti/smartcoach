@@ -1,19 +1,8 @@
 <% provide(:title, @user.name) %>
 <div class="container">
 
-	<div class="row">
-	 <aside class="span4">
-	  <section>
-	   <h1>
-	    <%= gravatar_for @user %>
-	    <%= @user.name %>
 
-	    </h1>
-		<p> <%= @user.user_desc %> </p>
-          </section>
-         </aside>
-      </div>
-      <div class="row">
+  <div class="row">
         <ul class="nav nav-pills .pull-right">
           <li>
             <%= link_to "Courses", courses_path %>
@@ -23,21 +12,37 @@
       </ul>
    </div>
 
+	<div class="row">
+	 <aside class="span4">
+	  <section>
+	   <h1>
+	    <%= gravatar_for @user %>
+	    <%= @user.name %>
+
+	    </h1>
+		<p> <%= @user.user_desc %> </p>
+    <p>
+      <% if @user.courses.any? %>
+        <%= "#{@user.name} has created #{@user.courses.count} courses." %> 
+      <% end %>
+    </p>
+          </section>
+         </aside>
+      </div>
+      
+
       <div class="row">
         <div class="span8">
-            <ul class="breadcrumb">
-              <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-              <li class="active">Courses</li>
-            </ul>
+            
 
             <div class="well">
-                
+                <h3>Courses created by <%= "#{@user.name}" %> </h3>
         	<% if @user.courses.any? %>
-			<ol class="microposts">
-				<%= render @courses %>
-			</ol>
-			<%= will_paginate @courses %>
-		<% end %>     
+      			<ol class="microposts">
+      				<%= render @courses %>
+      			</ol>
+      			<%= will_paginate @courses %>
+      		<% end %>     
 
                                 
                 <div class="clearfix"></div>

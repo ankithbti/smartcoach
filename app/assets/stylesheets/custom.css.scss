@@ -7,6 +7,13 @@
 /* mixins, variables, etc. */
 $grayMediumLight: #eaeaea;
 
+
+#droplinks a:hover{
+  color: #f1f1f1;
+}
+
+
+
 #pointout{
   background: url('arrow.png') no-repeat right top;
   position: absolute;
@@ -338,3 +345,25 @@ margin-left: 10px;
                     textarea{
                       height: 50px;
                     }
+
+                    .coachbox{
+  width:100%;
+  margin:10px;
+  padding:10px;
+  border-left-style: solid;
+  border-left-color: #CDB5CD;
+  border-left-width: 5px;
+  font-family: Marcellus ;
+}
+
+.coachbox:hover{
+  border-left-color: #BF5FFF;
+}
+
+.coachbox h1{
+  font-family: Marcellus, "Droid Serif";
+  font-size: 20px;
+  margin-left:20px;
+  margin-bottom: 0px;
+  padding:0px;
+}

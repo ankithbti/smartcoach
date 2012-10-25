@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name,:password, :password_confirmation,:user_type,:sub_plan,:user_desc
   has_secure_password
-  has_many :courses
+  has_many :courses, dependent: :destroy
 
 
   

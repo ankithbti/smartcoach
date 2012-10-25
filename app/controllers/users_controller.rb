@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def index		
 	@countUsersPerPage = 5
-    	@users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.paginate(page: params[:page], per_page: 5)
 	@topics = Topic.all		
   end
 end

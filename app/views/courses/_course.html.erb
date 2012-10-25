@@ -40,7 +40,12 @@
     	</div><!-- end .entry-thumbnail -->
         <div class="entry-content has-post-image">
           <p class="muted"><%= course.desc %></p>
-          <button class="btn btn-primary btn-success" type="button">Join to Access</button>
+          <% if signed_in? %>
+            <button class="btn btn-primary btn-success" type="button">Start Course</button>
+          <% else %>
+            <button class="btn btn-primary btn-info" type="button">Join to Access</button>
+          <% end %>
+          
         </div><!-- end .entry-content -->         
   	</div>
   	<div class="clearfix"></div>
