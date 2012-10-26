@@ -15,5 +15,5 @@ Heroku App for the same: http://protected-ocean-9093.herokuapp.com/
 Commands for heroku to update database:
 
 ### git push heroku master
-### heroku run rake db:reset
+### heroku run rake db:setup
 ### heroku run rake db:populate
