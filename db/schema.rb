@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025213103) do
+ActiveRecord::Schema.define(:version => 20121026201830) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -52,6 +52,21 @@ ActiveRecord::Schema.define(:version => 20121025213103) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "o_classes", :force => true do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.integer  "no_of_days"
+    t.integer  "no_of_hours_per_day"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "start_time_of_day"
+    t.time     "end_time_of_day"
+    t.integer  "no_of_student_per_class"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "user_id"
+  end
+
   create_table "relationships", :force => true do |t|
     t.integer  "course_id"
     t.integer  "topic_id"
@@ -85,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20121025213103) do
     t.string   "desc"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   add_index "tutorials", ["title", "author"], :name => "index_tutorials_on_title_and_author", :unique => true

@@ -10,6 +10,7 @@ Smartcoach::Application.routes.draw do
   resources :tutorials
   resources :groups
   resources :under_constructions
+  resources :o_classes
   
   root :to => 'screens#home'
   match '/about', :to => 'screens#about'

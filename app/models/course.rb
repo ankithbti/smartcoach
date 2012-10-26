@@ -5,11 +5,11 @@
 #  id         :integer          not null, primary key
 #  title      :string(255)
 #  author     :string(255)
-#  course_id  :integer
 #  image      :string(255)
-#  desc       :string(255)
+#  desc       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Course < ActiveRecord::Base

@@ -3,6 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 @import url(http://fonts.googleapis.com/css?family=Marcellus);
+
+.well-course{
+      margin:20px;
+      padding:10px;
+      border-bottom-color: #ddd;
+      border-bottom-width:1px;
+      border-bottom-style: solid;
+      font-family: "Marcellus"
+    }
+
+    .well-course:hover{
+      -webkit-box-shadow: 0px 8px 0px 0px #3A87AD;
+         -moz-box-shadow: 0px 8px 0px 0px #3A87AD;
+              box-shadow: 0px 8px 0px 0px #3A87AD;
+            font-weight: bold;
+
+    }
+
+    .well-course h4 img{
+      float:left;
+      margin-right:20px;
+      /*border-color: #3A87AD;
+      border-width:5px;
+      border-style: solid;*/
+      top:-5px;
+      position:relative;
+      font-family: Marcellus;
+      -webkit-box-shadow: 0 8px 6px -6px #3A87AD;
+     -moz-box-shadow: 0 8px 6px -6px #3A87AD;
+          box-shadow: 0 8px 6px -6px #3A87AD;
+
+    }
+
 #course_topic_ids {
   width: 450px;
 }

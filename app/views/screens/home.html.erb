@@ -60,15 +60,18 @@
       </div> -->
       
       <!-- <img src="arrow.png" width="100" height="100" style="position:absolute;top:50px;left:0px"/> -->
-      <div class="row" style="float:left;">
-        <ul class="nav nav-pills .pull-right">
-          <li><%= link_to "Courses", courses_path %></li>
-          <li><%= link_to "Tutorials", tutorials_path %></li>
-          <li><%= link_to "Blog", blogs_path %></li>
-	  <li><%= link_to "Tutors/Authors", users_path %></li>
-          
-      </ul>
-      </div>
+      
+        <div class="row" style="float:left;">
+          <ul class="nav nav-pills .pull-right">
+            <li>
+              <%= link_to "Courses", courses_path %>
+            </li>
+            <li><%= link_to "Tutorials", tutorials_path %></li>
+            <li><%= link_to "Online Classes", o_classes_path %></li>
+            <li ><%= link_to "Blog", blogs_path %></li>
+             <li ><%= link_to "Coaches", users_path %></li>
+          </ul>
+        </div>
 
       <center><p class="lead text-info blue">"A smarter way to learn creative and technical skills."</p></center>
       <div class="clearfix"></div>
@@ -117,7 +120,7 @@
               At SmartCoach courses are designed in a wat to help you grasp and practice complete skills.
             </p>
             <span align="center">
-              <button id="showCourse" class="btn btn-primary" type="button">Start with courses</button>
+              <%= link_to "Start with courses", courses_path , class: "btn btn-primary" %>
             </span>
           </div>
           <!-- <div class="well">
@@ -131,7 +134,7 @@
             <h4>Tutorials: Smart way to learn</h4>
             <p>SmartCoach worked with legends across many industries to bring you quality tutorials.</p>
             <span align="center">
-              <button id="showTutorial" class="btn btn-primary" type="button">Dive into tutorials</button>
+              <%= link_to "Dive into tutorials", tutorials_path , class: "btn btn-primary" %>
             </span>
           </div>
           <!-- <div class="well">
@@ -145,7 +148,7 @@
             <h4>Blog: Keep Sharing</h4>
             <p>SmartCoach has a moto of sharing knowledge across the globe.</p>
             <span align="center">
-              <button id="showBlog" class="btn btn-primary" type="button">Share with Blog</button>
+              <%= link_to "Share with Blog", blogs_path , class: "btn btn-primary" %>
             </span>
           </div>
           <!-- <div class="well">
@@ -166,6 +169,5 @@
       <center>
       
         <h4 style="color: #3A87AD;">Subscribe today to drive your career to new heights</h4>
-        <button class="btn btn-primary" type="button">Subscribe now</button>
-      
+        <%= link_to "Subscribe now", signup_path , class: "btn btn-primary" %>
       </center>
