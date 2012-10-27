@@ -2,18 +2,20 @@
 #
 # Table name: courses
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  author     :string(255)
-#  image      :string(255)
-#  desc       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  author       :string(255)
+#  image        :string(255)
+#  desc         :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  user_id      :integer
+#  ispublished  :integer
+#  releasemonth :string(255)      default("December")
 #
 
 class Course < ActiveRecord::Base
-  attr_accessible :author, :desc, :image, :title, :topic_ids, :user_id
+  attr_accessible :author, :desc, :image, :title, :topic_ids, :user_id, :ispublished, :releasemonth
   has_many :relationships
   has_many :topics, through: :relationships
   belongs_to :user
