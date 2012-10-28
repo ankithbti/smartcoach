@@ -21,3 +21,6 @@ Commands for heroku to update database:
 To Delete the file in git
 ### git add -u
 ### git commit -a -m "Deleted unnecesarry files"
+
+To Clone a Specific Branch code
+### git clone --branch=<Branch-Name> <Rep Url>
