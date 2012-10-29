@@ -11,14 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027210003) do
+ActiveRecord::Schema.define(:version => 20121029174237) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
     t.string   "author"
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.text     "content"
+    t.integer  "ispublished",  :default => 0
+    t.string   "releasemonth", :default => "December"
+    t.string   "image"
+    t.integer  "user_id"
   end
 
   create_table "categories", :force => true do |t|
@@ -35,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20121027210003) do
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
     t.integer  "user_id"
-    t.integer  "ispublished"
+    t.integer  "ispublished",  :default => 0
     t.string   "releasemonth", :default => "December"
   end
 
@@ -99,10 +103,14 @@ ActiveRecord::Schema.define(:version => 20121027210003) do
     t.string   "title"
     t.string   "author"
     t.string   "image"
-    t.string   "desc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.integer  "user_id"
+    t.integer  "ispublished",    :default => 0
+    t.string   "releasemonth",   :default => "December"
+    t.text     "desc"
+    t.string   "difficulty"
+    t.integer  "estimated_time"
   end
 
   add_index "tutorials", ["title", "author"], :name => "index_tutorials_on_title_and_author", :unique => true

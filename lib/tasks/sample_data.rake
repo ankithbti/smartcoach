@@ -251,6 +251,236 @@ namespace :db do
 		end
 
 
+
+
+		#Tutorials test data
+		tutorials_hash = {
+			1 => ["Connected to the Backbone", #Title
+			 	Faker::Name.name, #Author
+			 	"Medium", #difficulty
+			 	60, #time in minutes
+			 	1, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[1,3], #Category
+			 	"tutorials/backbone.png", #image
+			 	"Here's the thing: if you can't fathom why you'd need a framework like Backbone, then chances are, you don't! Perhaps you're exclusively working on simple websites or basic WordPress themes; in these cases, a structured JavaScript framework will likely be overkill.
+However, there will surely come a day when you realize that all of that spaghetti code within script tags at the bottom of your page has suddenly become unmanageable. Not only that, but, due to the way you structured your code, it's also impossible to test. Gasp! What to do?"
+			 	],
+			2 => ["The Power of Laravel Generators", #Title
+			 	Faker::Name.name, #Author
+			 	"Easy", #difficulty
+			 	30, #time in minutes
+			 	2, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[1], #Category
+			 	"tutorials/laravel-generators.jpg", #image
+			 	"Those of us who use Laravel on a daily basis will be quite familiar with migrations. The only problem is that, when we run php artisan migration:make, only a bit of boilerplate code is generated for us. Wouldn't it be amazing if we could also generate the schema for both the up and down functions? How much time would that save!?"
+			 	],
+			3 => ["Develop Your First Game in Canvas From Start to Finish", #Title
+			 	Faker::Name.name, #Author
+			 	"Hard", #difficulty
+			 	100, #time in minutes
+			 	1, #user_id
+			 	0, #ispublished
+			 	"May", #ReleaseMonth
+			 	[1,4], #Category
+			 	"tutorials/develop-game-in-canvas.jpg", #image
+			 	"Whether you're taking part in the discussion, or reading articles about it, you must be aware that, even though it's still a specification, HTML5 is ready to be used right now."
+			 	],
+			4 => ["A Visual Guide to Styling the Terminal in Minutes", #Title
+			 	Faker::Name.name, #Author
+			 	"Easy", #difficulty
+			 	30, #time in minutes
+			 	3, #user_id
+			 	1, #ispublished
+			 	"May", #ReleaseMonth
+			 	[1,2], #Category
+			 	"tutorials/styling-terminal.jpg", #image
+			 	"One of the questions that I am asked about most frequently relates to how I styled my Terminal. In this video, I encourage you to follow along with me, as we get everything setup from scratch."
+			 	],
+			5 => ["PHP Tips and Tricks", #Title
+			 	Faker::Name.name, #Author
+			 	"Medium", #difficulty
+			 	60, #time in minutes
+			 	5, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[2], #Category
+			 	"tutorials/php.jpg", #image
+			 	"Let's target the elephant in the room: PHP has been on the receiving end of a considerable amount of flack in the last few years. Well, who are we kidding? It's always served as the punching bag for the cool kids! But there's just one thing; despite all of this ridicule, PHP continues, with ease, to remain infinitely more popular than its server-side competitors in terms of users."
+			 	],
+			6 => ["Realtime Backbone.js Apps with FuelPHP and Pusher", #Title
+			 	Faker::Name.name, #Author
+			 	"Hard", #difficulty
+			 	90, #time in minutes
+			 	1, #user_id
+			 	0, #ispublished
+			 	"December", #ReleaseMonth
+			 	[2,3], #Category
+			 	"tutorials/backbone-and-pusher.png", #image
+			 	"Today we're going to create a small realtime web application with FuelPHP on the server, Backbone.js on the client and using the Pusher API for the realtime aspects. The application we'll be building is a modern take on my classic Shoutbox PHP demo application I originally wrote six years ago here on Nettuts+, and covered again not long after in Ruby on Rails."
+			 	],
+			7 => ["Front-end Performance Optimization: What, Why and How?", #Title
+			 	Faker::Name.name, #Author
+			 	"Hard", #difficulty
+			 	90, #time in minutes
+			 	1, #user_id
+			 	0, #ispublished
+			 	"May", #ReleaseMonth
+			 	[1,2], #Category
+			 	"tutorials/front-end-performance.jpg", #image
+			 	"Believe it or not, the concept of optimizing front-end code for maximum performance is a relatively new thing. Sure, years and years ago, we knew that it was important, but we simply didn't have access to the tools that we do today. Even six years ago, we were far more concerned with wrangling our websites into functioning correctly in Internet Explorer 6 than with squeezing every ounce of performance out of our applications."
+			 	],
+			8 => ["The Essentials of AMD and RequireJS", #Title
+			 	Faker::Name.name, #Author
+			 	"Easy", #difficulty
+			 	30, #time in minutes
+			 	2, #user_id
+			 	1, #ispublished
+			 	"May", #ReleaseMonth
+			 	[1,7], #Category
+			 	"tutorials/preview.jpg", #image
+			 	"In this screencast, we'll review RequireJS, an asynchronous module loader and dependency manager, and AMD, which defines the mechanism and guidelines for declaring and importing modules."
+			 	],
+			9 => ["Techniques For Test-Driving jQuery Plugins", #Title
+			 	Faker::Name.name, #Author
+			 	"Hard", #difficulty
+			 	90, #time in minutes
+			 	9, #user_id
+			 	1, #ispublished
+			 	"May", #ReleaseMonth
+			 	[5,3], #Category
+			 	"tutorials/techniques-for-test-driving-plugins1.jpg", #image
+			 	"In this hands-on screencast, from scratch, we will use test-driven development to build a jQuery plugin. Along the way, we'll take advantage of Grunt, QUnit, and GitHub to build, test, and distribute our plugin, respectively. If the idea of testing in JavaScript is still foreign to you, you won't find a better introduction!"
+			 	],
+			10 => ["How To Customize Your Terminal", #Title
+			 	Faker::Name.name, #Author
+			 	"Medium", #difficulty
+			 	60, #time in minutes
+			 	3, #user_id
+			 	1, #ispublished
+			 	"May", #ReleaseMonth
+			 	[1,3], #Category
+			 	"tutorials/how-to-customize-your-command-prompt.png", #image
+			 	"Lately, I've been getting this question a lot: how did you get your terminal to look the way it does? If you've noticed my terminal and are curious about how I set it up, this is the tutorial for you! Of course, what you learn here will be enough to get you started on creating your own custom command prompt, as well!"
+			 	]
+
+
+		}
+
+		count=0
+		tutorials_hash.each do |key, array|
+		  Tutorial.create!(title: array[0],
+			author: array[1],
+			difficulty: array[2],
+			estimated_time: array[3],
+			user_id: array[4],
+			ispublished: array[5],
+			releasemonth: array[6],
+			# 7 is category/topic
+			image: array[8],
+			desc: array[9])
+		  	count=count+1
+		  	array[7].each do |groupId|
+		  		Grouping.create!(tutorial_id: count,group_id: groupId)
+		  	end
+		end
+
+
+		#Blogs test Data
+		blogs_hash = {
+			1 => ["The Design Student Dilemma: Clients or Classes?", #Title
+			 	Faker::Name.name, #Author
+			 	1, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[1,3], #Category
+			 	"blogs/2757851927_838e959e76_z.jpg", #image
+			 	"This week's post is brought to us by Philip Zeplin. Philip teaches photo retouching and manipulation here at Tuts+ Premium and is also a successful author on the Envato marketplaces. Being a recent graduate himself, Philip weighs in on one of the most common questions facing students interested in design: to pursue college or jump into work?
+So you are a young new fresh student, perhaps straight out of high school. You have decided you want to become a designer. Congratulations! You have chosen a fantastic field. But what you should do? Should you go straight to working, apply for an internship, or study?
+When asking that question, you'll get a lot of very different answers, and in the end, the frustratingly true answer is probably !it depends."
+			 	],
+			2 => ["Common Screencasting 'Techniques' That Drive Me Nuts", #Title
+			 	Faker::Name.name, #Author
+			 	3, #user_id
+			 	0, #ispublished
+			 	"January", #ReleaseMonth
+			 	[1,5], #Category
+			 	"blogs/screencasting-techniques.jpg", #image
+			 	"What may not be immediately obvious is that, in addition to creating screencasts for Tuts+, I'm also a huge fan of the opposite: watching them! When I was first getting started in this industry, they provided the connection that I was missing. Books are a necessity, but we still often need the human aspect of learning. And that's what we've tried to achieve on this site: be the person sitting next to you, explaining confusing stuff.
+After all those years, I've certainly come across (and experimented with, myself) screencasts that unfortunately fall short. Luckily, these short-comings are fixable!"
+			 	],
+			3 => ["5 Fun iPhone Apps to help get your Creative Juices Flowing", #Title
+			 	Faker::Name.name, #Author
+			 	5, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[5,4], #Category
+			 	"blogs/photodune-2074124-girl-with-mobile-smart-phone-m.jpg", #image
+			 	"For those of us in the creative industry, almost anything and everything we come across and see, hear, taste and feel can be used as a source of inspiration for our work.
+But there are also times when we go blank and have a creative block. For those moments, there are some nifty little iPhone apps which can help in getting those creative juices flowing again, so here are five which I think are both fun and worth looking at:"
+			 	],
+			4 => ["Mottos to Design By", #Title
+			 	Faker::Name.name, #Author
+			 	1, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[5,4], #Category
+			 	"blogs/6891240539_564ffa808c_z.jpg", #image
+			 	"Keeping the creative juices flowing, embracing change and increasing our skills are all challenges we face as designers. Sometimes we need a different source of inspiration that lets us know to color outside the lines, cause a scene, make waves and get carried away every now and then.
+I have a painting in my office with those statements that inspire me when I need it most. It could be two in the morning and I've hit a creative road block, or a new opportunity landed in my inbox and I'm just not sure how to move forward. A look at these statements is usually enough to inspire me to overcome the many challenges I face every day and nurture the endless possibilities that may come up."
+			 	],
+			5 => ["The Pros and Cons of Self-Publishing", #Title
+			 	Faker::Name.name, #Author
+			 	3, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[5,4], #Category
+			 	"blogs/2549674296_25f954288f_z.jpeg", #image
+			 	"As the manager of Rockable Press, I constantly receive book proposals from aspiring authors around the world, and if we can't take their book proposal on-board, I always encourage them to consider the option of self-publishing the book themselves.
+I'm a huge fan of self-publishing, and though this may seem strange coming from someone who runs the publishing arm of a company, I think there's a lot to be said for it."
+			 	],
+			6 => ["Job Opening: We're Looking for a Web Design Producer", #Title
+			 	Faker::Name.name, #Author
+			 	4, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[5,4], #Category
+			 	"blogs/3713625765_335b6c5af0_z.jpeg", #image
+			 	"We are looking for a passionate web designer to work with a team of instructors (you'll build your own team) and lead them in producing a handful of awesome web design video courses each month."
+			 	],
+			7 => ["Member Workshop: What Are You Learning?", #Title
+			 	Faker::Name.name, #Author
+			 	8, #user_id
+			 	1, #ispublished
+			 	"January", #ReleaseMonth
+			 	[5,4], #Category
+			 	"blogs/3414888284_64a3ae6650_z.jpg", #image
+			 	"Practice does, indeed, make perfect. At the end of a lesson here on Tuts+ Premium, instructors frequently will encourage you to practice, try out what they just demonstrated, do something, make something! Those aren't just platitudes: you really do have to do it. Any skill, regardless of the education and knowledge received, takes hands-on execution and experimentation. Passively watching even the best course video will only take you so far. Just like watching a cooking show on television won't necessarily make you a professional chef. It takes practice. That's why schools assign homework and have workshops and labs."
+			 	]
+
+			
+		}
+
+		count=0
+		blogs_hash.each do |key, array|
+		  Blog.create!(title: array[0],
+			author: array[1],
+			user_id: array[2],
+			ispublished: array[3],
+			releasemonth: array[4],
+			# 5 is category/topic
+			image: array[6],
+			content: array[7])
+		  	count=count+1
+		  	array[5].each do |tagId| 
+		  		Tagging.create!(blog_id: count,tag_id: tagId)
+		  	end
+		end
+
+
 		
 
 		

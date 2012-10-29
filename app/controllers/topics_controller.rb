@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @countCoursesPerPage = 5
+    #@courses_for_topic = @topic.courses.paginate(page: params[:page], per_page: 5)
     @courses_for_topic = @topic.courses.paginate(page: params[:page], per_page: 5)
     @topics = Topic.order(:name)
   end

@@ -10,7 +10,7 @@
           <li><%= link_to "Tutorials", tutorials_path %></li>
           <li><%= link_to "Online Classes", o_classes_path %></li>
           <li><%= link_to "Blog", blogs_path %></li>
-           <li><%= link_to "Coaches", users_path %></li>
+           <li class="active"><%= link_to "Coaches", users_path %></li>
       </ul>
   </div>
 
@@ -34,11 +34,6 @@
       </p>
       <p> <%= @user.user_desc %> </p>
     
-    <p>
-      <% if @user.courses.any? %>
-        <%= "He has created #{@user.courses.count} courses." %> 
-      <% end %>
-    </p>
           </section>
          </aside>
        </center>
@@ -49,19 +44,87 @@
         
         <div class="span12">
             
+          <div class="tabbable"> <!-- Only required for left/right tabs -->
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#courses" data-toggle="tab">Courses <%= " (#{@user.courses.size})" %></a></li>
+                    <li><a href="#tutorials" data-toggle="tab">Tutorials<%= " (#{@user.tutorials.size})" %></a></li>
+                    <li><a href="#blogs" data-toggle="tab">Blogs<%= " (#{@user.blogs.size})" %></a></li>
+                  </ul>
+                  <div class="tab-content">
 
-            <div class="well">
-                <h4>Courses created by <%= "#{@user.name}" %> </h4>
-        	<% if @user.courses.any? %>
-      			<ol class="microposts">
-      				<%= render @courses %>
-      			</ol>
-      			<%= will_paginate @courses %>
-      		<% end %>     
+                    <div class="tab-pane active" id="courses">
 
+                      <div class="well">
+                            <% if @user.courses.size >= 1 %>
                                 
-                <div class="clearfix"></div>
-            </div>
+                                <% if @user.courses.any? %>
+                                    <%= will_paginate @courses %>
+                                    <ol class="microposts">
+                                      <%= render @courses %>
+                                    </ol>
+                                    <%= will_paginate @courses %>
+                                <% end %>                     
+                                <div class="clearfix"></div>
+                            <% else %>
+                              <div class="alert alert-error">
+                                    He has not created any course yet!!!!
+                              </div>
+                            <% end %>
+                      </div>
+
+                    </div><!-- <div class="tab-pane active" id="categories"> -->
+
+                    <div class="tab-pane" id="tutorials">
+                      
+                      <div class="well">
+                            <% if @user.tutorials.size >= 1 %>
+                              
+                              <% if @user.tutorials.any? %>
+                                  <%= will_paginate @tutorials %>
+                                  <ol class="microposts">
+                                    <%= render @tutorials %>
+                                  </ol>
+                                  <%= will_paginate @tutorials %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+                            <% else %>
+                              <div class="alert alert-error">
+                                    He has not created any tutorial yet!!!!
+                              </div>
+                            <% end %>
+                      </div>
+                    </div><!-- <div class="tab-pane" id="categories"> -->
+
+                    <div class="tab-pane" id="blogs">
+                      
+                      <div class="well">
+                            <% if @user.blogs.size >= 1 %>
+                              
+                              <% if @user.blogs.any? %>
+                                  <%= will_paginate @blogs %>
+                                  <ol class="microposts">
+                                    <%= render @blogs %>
+                                  </ol>
+                                  <%= will_paginate @blogs %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+                            <% else %>
+                              <div class="alert alert-error">
+                                    He has not created any blogs yet!!!!
+                              </div>
+                            <% end %>
+                      </div>
+                    </div><!-- <div class="tab-pane" id="categories"> -->
+                  
+                  </div><!--<div class="tab-content"> -->
+                </div><!-- Only required for left/right tabs -->
+
+
+
+
+
+
+            
        	   </div><!-- <div class="span8"> -->
 
         

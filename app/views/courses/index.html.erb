@@ -14,7 +14,7 @@
 
       <div class="row">
         <div class="span8">
-            <% if @courses.size > 1 %>
+            <% if @courses.size >= 1 %>
                   
                   <div class="well">
                       <% if signed_in? && current_user.user_type == 1 #Teacher %>

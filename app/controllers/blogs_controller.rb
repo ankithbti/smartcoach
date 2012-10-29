@@ -1,7 +1,9 @@
 class BlogsController < ApplicationController
+  before_filter :signed_in_user, only: [:create, :edit,:update,:delete]
   def index
-    @blogs = Blog.search(params[:search])
-    @tags = Tag.all
+    @countBlogsPerPage = 5
+    @blogs = Blog.where(ispublished: 1).search(params[:search])
+    @tags = Tag.order(:name)
   end
 
   def show

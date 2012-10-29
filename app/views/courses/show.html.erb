@@ -1,40 +1,22 @@
+<% provide(:title, 'Show Course') %>
 <div class="row">
         <ul class="nav nav-pills .pull-right">
-          <li>
+          <li class="active">
             <%= link_to "Courses", courses_path %>
           </li>
           <li><%= link_to "Tutorials", tutorials_path %></li>
+          <li><%= link_to "Online Classes", o_classes_path %></li>
           <li><%= link_to "Blog", blogs_path %></li>
+	         <li><%= link_to "Coaches", users_path %></li>
       </ul>
 </div>
-<div id="blogstack">
-    <div id="toppart"></div>
-    <h1><%= @course.title %></h1>
-    <div class="entry-meta">
-	      <span class="meta-author">
-	        <a href="#" title="#" rel="author"><%= @course.author %></a>
-	      </span>
-	      <span class="meta-published"><%= @course.created_at %></span>
-	      <span class="meta-categories">
-	        <% @course.topics.each do |topic| %>
-	          <a href="#" title="#"><%= topic.name %></a>
-	            <% if @course.topics.last.name == topic.name %>
-	            <% else %>
-	              <span class="cat-sep">\</span>
-	            <% end %>
-	        <% end %>
-	      </span>
-	      <p style="float:right;margin:0px;">
-		      <%= link_to 'Destroy', @course, confirm: 'Are you sure?', method: :delete %> | 
-		      <%= link_to "Edit", edit_course_path(@course) %>
-	      </p>
-	    <div class="clearfix"></div>
-  	</div>
-  	<div class="clearfix"></div>
-
-  	<div class="alert alert-info">
-  		<%= @course.desc %>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<div class="hero-unit" align="center">
+				<h1>Canvas Page will appear here!!!!</h1>
+				<h2><%= link_to "Back to Courses", courses_path %></h2>
+			</div>
+		</div>
 	</div>
-	<p style="margin:10px;"><%= link_to 'Back', courses_path %></p>
 </div>
-<div class="clearfix"></div>

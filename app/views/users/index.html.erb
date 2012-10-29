@@ -19,17 +19,28 @@
       <% puts " "#Rails.env %>
       <center>
         <div class="span12">
-          <p class="lead" style="color:#BF5FFF;"><i class="icon-user" style="position:relative;top:3px;"></i> Meet our smart coaches!!!!</p>
+          <p class="lead" style="color:#000;"><i class="icon-user" style="position:relative;top:3px;"></i> Meet our smart coaches!!!!</p>
           
           <% for user in @users %>
           <div class="coachbox" align="left">
-            <h1>
-              <%= gravatar_for user %>
+              <%= gravatar_for_with_size user, "50x50" %>
               <span>
                 <%= link_to user.name, user %>
-                <p><%= user.email %></p>
+                <p>
+                  <%= user.email %>  |   
+                  <% if user.user_type == 1  %>
+                    Student
+                  <% elsif user.user_type == 2 %>
+                    Teacher
+                  <% else %>
+                    Admin
+                  <% end %>
+
+                </p>
+                
               </span>
-            </h1>
+              <div class="clearfix"></div>
+            
             <div class="clearfix"></div>
             
           </div>

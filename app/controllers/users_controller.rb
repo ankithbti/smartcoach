@@ -17,8 +17,9 @@ class UsersController < ApplicationController
 	
   def show		
 	@user = User.find(params[:id])
-	@courses = @user.courses.paginate(page: params[:page])
-	@topics = Topic.all		
+	@courses = @user.courses.paginate(page: params[:page], per_page: 5)
+	@tutorials = @user.tutorials.paginate(page: params[:page], per_page: 5)
+	@blogs = @user.blogs.paginate(page: params[:page], per_page: 5)
   end
 
   def index		

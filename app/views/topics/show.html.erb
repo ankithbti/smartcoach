@@ -1,3 +1,4 @@
+<% provide(:title, 'Courses for ' + @topic.name) %>
 <%- model_class = Topic -%>
 <div class="container">
 
@@ -14,7 +15,7 @@
   </div>
 
   <div class="page-header">
-    <% @topicStructure = @topic.name + " ( #{@topic.courses.size} )" %>
+    <% @topicStructure = @topic.name + " ( #{@topic.courses.where(ispublished: 1).size} )" %>
     <h3>Courses related to category: <%= @topicStructure %></h3>
   </div>
   <% if signed_in? && current_user.user_type == 3 #Admin %>
@@ -35,13 +36,13 @@
   <div class="row">
         <div class="span8">
             
-            <% if @topic.courses.size > 1 %>
+            <% if @topic.courses.where(ispublished: 1).size >= 1 %>
                 <div class="well">
                     <% if signed_in? && current_user.user_type == 1 #Teacher %>
                       <p><%= link_to "Add New Course", new_course_path , class: "move-to-right-top"%></p>
                     <% end %>
                     
-                    <%= render @topic.courses %>
+                    <%= render @topic.courses.where(ispublished: 1) %>
 
                     <% @topic.courses.each do |course| %>
                       <% if ((course.id % @countCoursesPerPage) == 0 ) %>
@@ -83,7 +84,7 @@
                               <li class="nav-header"></li>
                               <li><%= link_to "All" + " ( #{Course.where(ispublished: 1).all.size} )", courses_path %></a></li>
                               <% @topics.each do |topic| %>
-                                <% @topicStructure = topic.name + " ( #{ topic.courses.where(ispublished: 1).size } )" %>
+                                <% @topicStructure = topic.name + " ( #{topic.courses.where(ispublished: 1).size } )" %>
                                 <% if topic.id == @topic.id %>
                                   <li class="active"><a href="#"><%= link_to @topicStructure, topic %></a></li>
                                 <% else %>
