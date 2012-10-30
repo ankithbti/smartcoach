@@ -14,6 +14,10 @@ gem 'roadie'
 gem 'twitter-bootstrap-rails'
 #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :ref => '5269f0022179ef442820a124dae4da8f06275010'
 
+gem 'sass-rails', '3.2.4'
+gem 'coffee-rails', '3.2.2'
+gem 'uglifier', '1.2.3'
+
 group :development, :test do
 gem 'sqlite3', '1.3.5'
 gem 'rspec-rails', '2.10.0'
@@ -22,11 +26,11 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-gem 'sass-rails', '3.2.4'
-gem 'coffee-rails', '3.2.2'
-gem 'uglifier', '1.2.3'
-end
+# group :assets do
+# gem 'sass-rails', '3.2.4'
+# gem 'coffee-rails', '3.2.2'
+# gem 'uglifier', '1.2.3'
+# end
 
 group :test do
 gem 'capybara', '1.1.2'
