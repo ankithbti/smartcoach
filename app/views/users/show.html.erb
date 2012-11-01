@@ -49,6 +49,7 @@
                     <li class="active"><a href="#courses" data-toggle="tab">Courses <%= " (#{@user.courses.size})" %></a></li>
                     <li><a href="#tutorials" data-toggle="tab">Tutorials<%= " (#{@user.tutorials.size})" %></a></li>
                     <li><a href="#blogs" data-toggle="tab">Blogs<%= " (#{@user.blogs.size})" %></a></li>
+                    <li><a href="#onlineclasses" data-toggle="tab">Online Classes<%= " (#{@user.o_classes.size})" %></a></li>
                   </ul>
                   <div class="tab-content">
 
@@ -72,7 +73,7 @@
                             <% end %>
                       </div>
 
-                    </div><!-- <div class="tab-pane active" id="categories"> -->
+                    </div><!-- <div class="tab-pane active" id="courses"> -->
 
                     <div class="tab-pane" id="tutorials">
                       
@@ -93,7 +94,7 @@
                               </div>
                             <% end %>
                       </div>
-                    </div><!-- <div class="tab-pane" id="categories"> -->
+                    </div><!-- <div class="tab-pane" id="tutorials"> -->
 
                     <div class="tab-pane" id="blogs">
                       
@@ -114,7 +115,28 @@
                               </div>
                             <% end %>
                       </div>
-                    </div><!-- <div class="tab-pane" id="categories"> -->
+                    </div><!-- <div class="tab-pane" id="blogs"> -->
+
+                    <div class="tab-pane" id="onlineclasses">
+                      
+                      <div class="well">
+                            <% if @user.o_classes.size >= 1 %>
+                              
+                              <% if @user.o_classes.any? %>
+                                  <%= will_paginate @o_classes %>
+                                  <ol class="microposts">
+                                    <%= render @o_classes %>
+                                  </ol>
+                                  <%= will_paginate @o_classes %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+                            <% else %>
+                              <div class="alert alert-error">
+                                    He has not created any o_classes yet!!!!
+                              </div>
+                            <% end %>
+                      </div>
+                    </div><!-- <div class="tab-pane" id="onlineclasses"> -->
                   
                   </div><!--<div class="tab-content"> -->
                 </div><!-- Only required for left/right tabs -->
