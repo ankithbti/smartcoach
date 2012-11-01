@@ -79,6 +79,13 @@ namespace :db do
 				2, #user_type
 				2, #sub_plan
 				"This is a dummy message about user. This will tell soemthing about this user."
+			],
+			11 => ["Ankit Gupta", #Name
+				"ankithbti007@gmail.com", #email
+				"password123", #password
+				3, #user_type
+				2, #sub_plan
+				"This is a dummy message about user. This will tell soemthing about this user."
 			]
 		}
 
@@ -90,6 +97,78 @@ namespace :db do
 			user_type: array[3],
 			sub_plan: array[4],
 			user_desc: array[5])
+		end
+
+
+		#FAQ block for test data
+		faqs_hash= {
+			1 => ["What are your payment plans and options?", #question
+				"You can sign up for a monthly subscription ($19 a month) or a yearly subscription ($180 a year, save 20%). We also offer discounts for groups of 5 or more.", #answer
+				5
+			],
+			2 => ["How do I upgrade my Basic membership?", #question
+				"If you have a pre-existing $9 a month membership you will be able to continue accessing Tutorials and Source Files into the future. To become a full member and access eBooks and our library of courses, you'll need to upgrade your account to the current membership plan. This will be an additional $10 a month and is a separate subscription that works in tandem with your Basic membership to give you full access. You can upgrade at any time via your My Account area. The two subscriptions in tandem will total $19 a month (less if your Basic membership was discounted).", #answer
+				6
+			],
+			3 => ["Do you offer any other payment methods, besides PayPal and Moneybookers (Skrill)?",
+				"At this time pure credit card payments are not supported. However, it's easy to pay with your credit card through PayPal.",
+				7
+			],
+			4 => ["What SmartCoach can provide?",
+				"We founded SmartCoach to help you learn the skills you need to create wonderful things. Whether that's an award-winning web design, a popular web app, a breathtaking video project, or a sought-after freelance business, we believe you can do it.
+				Becoming a member is the best way to learn and improve the skills that are most important to you: skills that can help you practice your most passionate hobbies, super-charge your career, or go from paper-pusher to creative mastermind.
+				Over three years we've helped more than 45,000 members learn cutting-edge skills across top creative and tech fields like design, photography, web development, motion graphics and much more.
+				Because we believe education should be accessible to everyone, a SmartCoach Premium membership is a fraction of the cost of schools and formal training. According to many of our members, it's just as good - if not better.",
+				1
+			],
+			5 => ["Why to join SmartCoach?",
+				"It's easy to learn software, but what should you make with it?
+				It's easy to learn tips and techniques, but when and how should you use them?
+				SmartCoach is designed to help you grasp and practice complete skills. Learning via tutorials, eBooks and courses means that topics are covered in-depth from many different angles, leaving you with a well-grounded understanding of how to apply the skills you've learned.
+				We've worked with legends across many industries to bring you training that is unmatched in quality, teaching you best-practices and good technique. Every resource is created by experts and reviewed by experts.
+				Self-learning can be the most important form of education in your life. If you care about giving yourself the best education, you'll treasure your SmartCoach Premium membership.",
+				2
+			],
+			6 => ["Who is the coach here ?",
+				"A good teacher makes all the difference.
+				Do you remember your favorite teacher from school? You probably learned more in his or her classes than you learned anywhere else. The best teachers make learning easy and fun.
+				These are the kinds of Instructors we have on our team. If you've ever tried to learn a skill but just didn't 'get' your teacher, we think you'll love learning with our instructors at SmartCoach.
+				Meet our coaches by pressing coaches link in sub header menu.",
+				3
+			],
+			7 => ["What is the quality of tutorials here ?",
+				"Our tutorials teach you one technique comprehensively and in great detail. When you complete a tutorial, we want to make sure that whatever you're learning, you really get it. Every tutorial goes above and beyond the quality and depth you can expect to find anywhere else. Our library includes both video and written tutorials with screenshots, so you can learn exactly how you like to learn.
+				members get immediate access to hundreds of lessons and resources, but better yet, our library is always growing. We're adding new tutorials, courses and eBooks all the time, covering a broad range of creative and technical skills. There will always be something new and interesting for you to explore.",
+				4
+			],
+			8 => ["I need to cancel my membership. What do I do?",
+				"Membership cancellation is handled through your payment provider. You can cancel your membership at any time, for any reason.",
+				8
+			],
+			9 => ["What should I do if something isn't working?",
+				"If you notice that something isn't working as it should be, we'd like to fix it. Please submit a Support Ticket so we can work on resolving the issue.",
+				9
+			],
+			10 => ["What are the Terms & Conditions for SmartCoach Premium?",
+				"You can view the current Terms and Conditions for SmartCoach by pressing the link in the fotter of the page. ",
+				10
+			],
+			11 => ["Why is my membership inactive?",
+				"A membership is inactive if it has not yet been paid for. If you believe you have paid for your membership, but its status is still inactive, you may have paid via eCheque. eCheques are a PayPal debit to your bank account, and can take several business days to clear. Your membership will not become active until the eCheque clears and we receive your payment (you can check the status of your payment in PayPal).
+				If you believe you have paid for your membership by a method other than eCheque and it is still not listed as active, you should create a support ticket before trying to make another payment. Please include your SmartCoach username and describe anything unusual you noticed while trying to sign up and pay for your membership.",
+				11
+			]
+
+
+
+
+		}
+
+		faqs_hash.each do |key, array|
+		  Faq.create!(question: array[0],
+			answer: array[1],
+			order_id: array[2]
+			)
 		end
 
 
@@ -320,7 +399,7 @@ However, there will surely come a day when you realize that all of that spaghett
 			 	"December", #ReleaseMonth
 			 	[2,3], #Category
 			 	"tutorials/backbone-and-pusher.png", #image
-			 	"Today we're going to create a small realtime web application with FuelPHP on the server, Backbone.js on the client and using the Pusher API for the realtime aspects. The application we'll be building is a modern take on my classic Shoutbox PHP demo application I originally wrote six years ago here on Nettuts+, and covered again not long after in Ruby on Rails."
+			 	"Today we're going to create a small realtime web application with FuelPHP on the server, Backbone.js on the client and using the Pusher API for the realtime aspects. The application we'll be building is a modern take on my classic Shoutbox PHP demo application I originally wrote six years ago here on SmartCoach, and covered again not long after in Ruby on Rails."
 			 	],
 			7 => ["Front-end Performance Optimization: What, Why and How?", #Title
 			 	Faker::Name.name, #Author
@@ -398,7 +477,7 @@ However, there will surely come a day when you realize that all of that spaghett
 			 	"January", #ReleaseMonth
 			 	[1,3], #Category
 			 	"blogs/2757851927_838e959e76_z.jpg", #image
-			 	"This week's post is brought to us by Philip Zeplin. Philip teaches photo retouching and manipulation here at Tuts+ Premium and is also a successful author on the Envato marketplaces. Being a recent graduate himself, Philip weighs in on one of the most common questions facing students interested in design: to pursue college or jump into work?
+			 	"This week's post is brought to us by Philip Zeplin. Philip teaches photo retouching and manipulation here at SmartCoach Premium and is also a successful author on the Envato marketplaces. Being a recent graduate himself, Philip weighs in on one of the most common questions facing students interested in design: to pursue college or jump into work?
 So you are a young new fresh student, perhaps straight out of high school. You have decided you want to become a designer. Congratulations! You have chosen a fantastic field. But what you should do? Should you go straight to working, apply for an internship, or study?
 When asking that question, you'll get a lot of very different answers, and in the end, the frustratingly true answer is probably !it depends."
 			 	],
@@ -409,7 +488,7 @@ When asking that question, you'll get a lot of very different answers, and in th
 			 	"January", #ReleaseMonth
 			 	[1,5], #Category
 			 	"blogs/screencasting-techniques.jpg", #image
-			 	"What may not be immediately obvious is that, in addition to creating screencasts for Tuts+, I'm also a huge fan of the opposite: watching them! When I was first getting started in this industry, they provided the connection that I was missing. Books are a necessity, but we still often need the human aspect of learning. And that's what we've tried to achieve on this site: be the person sitting next to you, explaining confusing stuff.
+			 	"What may not be immediately obvious is that, in addition to creating screencasts for SmartCoach, I'm also a huge fan of the opposite: watching them! When I was first getting started in this industry, they provided the connection that I was missing. Books are a necessity, but we still often need the human aspect of learning. And that's what we've tried to achieve on this site: be the person sitting next to you, explaining confusing stuff.
 After all those years, I've certainly come across (and experimented with, myself) screencasts that unfortunately fall short. Luckily, these short-comings are fixable!"
 			 	],
 			3 => ["5 Fun iPhone Apps to help get your Creative Juices Flowing", #Title
@@ -458,7 +537,7 @@ I'm a huge fan of self-publishing, and though this may seem strange coming from 
 			 	"January", #ReleaseMonth
 			 	[5,4], #Category
 			 	"blogs/3414888284_64a3ae6650_z.jpg", #image
-			 	"Practice does, indeed, make perfect. At the end of a lesson here on Tuts+ Premium, instructors frequently will encourage you to practice, try out what they just demonstrated, do something, make something! Those aren't just platitudes: you really do have to do it. Any skill, regardless of the education and knowledge received, takes hands-on execution and experimentation. Passively watching even the best course video will only take you so far. Just like watching a cooking show on television won't necessarily make you a professional chef. It takes practice. That's why schools assign homework and have workshops and labs."
+			 	"Practice does, indeed, make perfect. At the end of a lesson here on SmartCoach Premium, instructors frequently will encourage you to practice, try out what they just demonstrated, do something, make something! Those aren't just platitudes: you really do have to do it. Any skill, regardless of the education and knowledge received, takes hands-on execution and experimentation. Passively watching even the best course video will only take you so far. Just like watching a cooking show on television won't necessarily make you a professional chef. It takes practice. That's why schools assign homework and have workshops and labs."
 			 	]
 
 			

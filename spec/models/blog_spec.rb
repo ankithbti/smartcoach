@@ -11,6 +11,7 @@
 #  ispublished  :integer          default(0)
 #  releasemonth :string(255)      default("December")
 #  image        :string(255)
+#  user_id      :integer
 #
 
 require File.dirname(__FILE__) + '/../spec_helper'

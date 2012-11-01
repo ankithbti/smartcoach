@@ -6,10 +6,12 @@
             <%= link_to "Courses", courses_path %>
           </li>
           <li class="active"><%= link_to "Tutorials", tutorials_path %></li>
-          <li><%= link_to "Online Classes", o_classes_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Online Classes", o_classes_path %></li>
+          <% end %>
           <li><%= link_to "Blog", blogs_path %></li>
-           <li><%= link_to "Coaches", users_path %></li>
-      </ul>
+           <li ><%= link_to "Coaches", users_path %></li>
+        </ul>
       </div>
 
       <div class="row">

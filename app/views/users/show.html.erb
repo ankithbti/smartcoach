@@ -8,10 +8,12 @@
             <%= link_to "Courses", courses_path %>
           </li>
           <li><%= link_to "Tutorials", tutorials_path %></li>
-          <li><%= link_to "Online Classes", o_classes_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Online Classes", o_classes_path %></li>
+          <% end %>
           <li><%= link_to "Blog", blogs_path %></li>
            <li class="active"><%= link_to "Coaches", users_path %></li>
-      </ul>
+        </ul>
   </div>
 
 	<div class="row">
@@ -25,7 +27,7 @@
       <p> <%= @user.email %> </p>
       <p>He is a 
         <% if @user.user_type == 2 %>
-          Teacher
+          Coach
         <% elsif  @user.user_type == 1 %>
           Student
         <% else %>

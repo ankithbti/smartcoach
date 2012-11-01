@@ -1,4 +1,5 @@
 class ScreensController < ApplicationController
+  include ScreensHelper
   def home
   end
 

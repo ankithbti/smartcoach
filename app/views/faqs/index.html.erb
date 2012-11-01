@@ -1,4 +1,4 @@
-<% provide(:title, 'Under Construction') %>
+<% provide(:title, 'Frequently Asked Questions') %>
 <% provide(:effectingHeader, 'Yes') %>
 <div class="navbar navbar-fixed-top ds-dragover-1" >
      <div class="navbar-inner">
@@ -49,29 +49,51 @@
 <center>
   <div class="row">
     <div class="container">
-      <h2>General FAQs</h2>
-      <div class="span12">
-        <div id="faqs">
-          <div id="question" align="left">
-              <i class="icon-question-sign icon-white"></i>
-              <span>Here the question will come</span>
-          </div>
-          <div id="answer" align="left">
-              <i class="icon-bullhorn icon-black"></i>
-              <span>Here the answer will come</span>
-          </div>
 
-          <div id="question" align="left">
-              <i class="icon-question-sign icon-white"></i>
-              <span>Here the question will come</span>
-          </div>
-          <div id="answer" align="left">
-              <i class="icon-bullhorn icon-black"></i>
-              <span>Here the answer will come</span>
-          </div>
+      <div class="row">
+        <ul class="nav nav-pills .pull-right">
+          <li>
+            <%= link_to "Courses", courses_path %>
+          </li>
+          <li><%= link_to "Tutorials", tutorials_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Online Classes", o_classes_path %></li>
+          <% end %>
+          <li><%= link_to "Blog", blogs_path %></li>
+           <li ><%= link_to "Coaches", users_path %></li>
+        </ul>
+      </div>
+      
+      <div class="span12">
+        
+        <div id="faqs">
+          <h2>General FAQs</h2>
+          <% for faq in @faqs %>
+              <div id="question" align="left">
+                  <i class="icon-question-sign icon-white"></i>
+                  <span><%= faq.question %></span>
+              </div>
+              <div id="answer" align="left">
+                  <i class="icon-bullhorn icon-black"></i>
+                  <span><%= faq.answer %></span>
+                  <% if signed_in? && current_user.user_type == 3 #Admin %>
+                    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_faq_path(faq), :class => 'btn btn-mini' %>
+                     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      faq_path(faq),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+                  <% end %>
+              </div>
+
+              <div class="clearfix"></div>
+          <% end %>
         </div><!-- <div id="faqs"> -->
+        <p class="text-info">Note: Click on the question to view its answer.</p>
       </div><!-- <div id="span12"> -->
     </div><!-- <div id="container"> -->
   </div><!-- <div id="row"> -->
   
 </center>
+

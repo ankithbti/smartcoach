@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	include SessionsHelper
     def new
 	@user = User.new
   end
@@ -29,7 +30,12 @@ class UsersController < ApplicationController
   def index		
 	@countUsersPerPage = 5
     # @users = User.paginate(page: params[:page], per_page: 5)
-    @users = User.all
+    if signed_in? && current_user.user_type == 3
+    	@users = User.all
+    else
+    	@users = User.where(user_type: 2)
+    end
+    
 	@topics = Topic.all		
   end
 end

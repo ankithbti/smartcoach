@@ -1,0 +1,35 @@
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Marcellus);
+
+.text-info{
+	color: #3A87AD;
+	font-family: Marcellus;
+	float:right;
+}
+
+#faqs {
+	font-family: Marcellus ;
+}
+
+
+#question{
+	width:80%;
+	background-color: #08C;
+	margin:5px;
+	padding:5px;
+	color: white;
+	text-align: justify;
+	cursor: pointer;
+	cursor: hand;
+	font-size: 18px;
+}
+
+#answer{
+	width:80%;
+	margin:5px;
+	padding:5px;
+	color: #08C;
+	text-align: justify;
+	font-size: 15px;
+}
