@@ -46,10 +46,16 @@
             
           <div class="tabbable"> <!-- Only required for left/right tabs -->
                   <ul class="nav nav-tabs">
-                    <li class="active"><a href="#courses" data-toggle="tab">Courses <%= " (#{@user.courses.size})" %></a></li>
-                    <li><a href="#tutorials" data-toggle="tab">Tutorials<%= " (#{@user.tutorials.size})" %></a></li>
-                    <li><a href="#blogs" data-toggle="tab">Blogs<%= " (#{@user.blogs.size})" %></a></li>
+                    <li class="active"><a href="#courses" data-toggle="tab">Courses <%= " (#{@user.courses.where(ispublished: 1).size})" %></a></li>
+                    <li><a href="#tutorials" data-toggle="tab">Tutorials<%= " (#{@user.tutorials.where(ispublished: 1).size})" %></a></li>
+                    <li><a href="#blogs" data-toggle="tab">Blogs<%= " (#{@user.blogs.where(ispublished: 1).size})" %></a></li>
                     <li><a href="#onlineclasses" data-toggle="tab">Online Classes<%= " (#{@user.o_classes.size})" %></a></li>
+                    <% @pendingSize = @user.courses.where(ispublished: 0).size +
+                                   @user.blogs.where(ispublished: 0).size +
+                                   @user.tutorials.where(ispublished: 0).size %>
+                    <% if signed_in? && current_user == @user #same user is logged in %>
+                      <li><a href="#pending" data-toggle="tab">Pending<%= " (#{@pendingSize})" %></a></li>
+                    <% end %>
                   </ul>
                   <div class="tab-content">
 
@@ -133,6 +139,51 @@
                             <% else %>
                               <div class="alert alert-error">
                                     He has not created any o_classes yet!!!!
+                              </div>
+                            <% end %>
+                      </div>
+                    </div><!-- <div class="tab-pane" id="onlineclasses"> -->
+
+                    <div class="tab-pane" id="pending">
+                      
+                      <div class="well">
+                            <% if @pendingSize >= 1 %>
+                              
+                              <% if @pending_courses.any? %>
+                                    <h3>Courses</h3>
+                                    <%= will_paginate @pending_courses %>
+                                    <ol class="microposts">
+                                      <%= render @pending_courses %>
+                                    </ol>
+                                    <%= will_paginate @pending_courses %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+
+                              
+                              <% if @pending_tutorials.any? %>
+                                    <h3>Tutorials</h3>
+                                    <%= will_paginate @pending_tutorials %>
+                                    <ol class="microposts">
+                                      <%= render @pending_tutorials %>
+                                    </ol>
+                                    <%= will_paginate @pending_tutorials %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+
+                              
+                              <% if @pending_blogs.any? %>
+                                    <h3>Blogs</h3>
+                                    <%= will_paginate @pending_blogs %>
+                                    <ol class="microposts">
+                                      <%= render @pending_blogs %>
+                                    </ol>
+                                    <%= will_paginate @pending_blogs %>
+                              <% end %>                     
+                              <div class="clearfix"></div>
+
+                            <% else %>
+                              <div class="alert alert-error">
+                                    Nothing is pending on you!!!!
                               </div>
                             <% end %>
                       </div>

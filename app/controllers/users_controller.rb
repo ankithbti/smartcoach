@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 	@tutorials = @user.tutorials.where(ispublished: 1).paginate(page: params[:page], per_page: 5)
 	@blogs = @user.blogs.where(ispublished: 1).paginate(page: params[:page], per_page: 5)
     @o_classes = @user.o_classes.paginate(page: params[:page], per_page: 5)
+    @pending_courses = @user.courses.where(ispublished: 0).paginate(page: params[:page], per_page: 5)
+	@pending_tutorials = @user.tutorials.where(ispublished: 0).paginate(page: params[:page], per_page: 5)
+	@pending_blogs = @user.blogs.where(ispublished: 0).paginate(page: params[:page], per_page: 5)
   end
 
   def index		
