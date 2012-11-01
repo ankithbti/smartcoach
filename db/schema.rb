@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101115353) do
+ActiveRecord::Schema.define(:version => 20121101163929) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(:version => 20121101115353) do
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
 
   create_table "faqs", :force => true do |t|
-    t.string   "question"
-    t.string   "answer"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "order_id"
+    t.text     "question"
+    t.text     "answer"
   end
 
   create_table "groupings", :force => true do |t|
