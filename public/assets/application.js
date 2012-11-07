@@ -9785,7 +9785,10 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
   jQuery(function() {
     $("a[rel=popover]").popover();
     $(".tooltip").tooltip();
-    return $("a[rel=tooltip]").tooltip();
+    $("a[rel=tooltip]").tooltip();
+    return $('.carousel').carousel({
+      interval: 5000
+    });
   });
 
 }).call(this);
@@ -12884,6 +12887,8 @@ Copyright (c) 2011 by Harvest
 
 }).call(this);
 $(function(){
+
+	// $('.carousel').carousel()
 
 	$('#faqs #question').each(function() {
   	var tis = $(this), state = false, answer =  tis.next('div').hide().css('height','auto').slideUp();
