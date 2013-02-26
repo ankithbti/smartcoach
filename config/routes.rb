@@ -1,5 +1,6 @@
 Smartcoach::Application.routes.draw do
   
+  resources :faqs
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -16,7 +17,7 @@ Smartcoach::Application.routes.draw do
   match '/about', :to => 'screens#about'
   match '/privacy', :to => 'screens#privacy'
   match '/terms', :to => 'screens#terms'
-  match '/faq', :to => 'screens#faq'
+  #match '/faq', :to => 'screens#faq'
   match '/construction', :to => 'screens#construction'
 
   # match '/courses_show', :to => 'courses#show'

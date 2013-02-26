@@ -11,14 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026201830) do
+ActiveRecord::Schema.define(:version => 20121101163929) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
     t.string   "author"
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.text     "content"
+    t.integer  "ispublished",  :default => 0
+    t.string   "releasemonth", :default => "December"
+    t.string   "image"
+    t.integer  "user_id"
   end
 
   create_table "categories", :force => true do |t|
@@ -32,12 +36,22 @@ ActiveRecord::Schema.define(:version => 20121026201830) do
     t.string   "author"
     t.string   "image"
     t.text     "desc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.integer  "user_id"
+    t.integer  "ispublished",  :default => 0
+    t.string   "releasemonth", :default => "December"
   end
 
   add_index "courses", ["title", "author"], :name => "index_courses_on_title_and_author", :unique => true
+
+  create_table "faqs", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "order_id"
+    t.text     "question"
+    t.text     "answer"
+  end
 
   create_table "groupings", :force => true do |t|
     t.integer  "group_id"
@@ -97,10 +111,14 @@ ActiveRecord::Schema.define(:version => 20121026201830) do
     t.string   "title"
     t.string   "author"
     t.string   "image"
-    t.string   "desc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.integer  "user_id"
+    t.integer  "ispublished",    :default => 0
+    t.string   "releasemonth",   :default => "December"
+    t.text     "desc"
+    t.string   "difficulty"
+    t.integer  "estimated_time"
   end
 
   add_index "tutorials", ["title", "author"], :name => "index_tutorials_on_title_and_author", :unique => true

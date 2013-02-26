@@ -10,6 +10,7 @@
 #
 
 class Grouping < ActiveRecord::Base
+	attr_accessible :tutorial_id, :group_id
   belongs_to :tutorial
   belongs_to :group
 end

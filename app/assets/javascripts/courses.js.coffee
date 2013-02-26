@@ -6,3 +6,4 @@ jQuery ->
   $('#tutorial_group_ids').chosen()
   $('#blog_tag_ids').chosen()
   $('.dropdown-toggle').dropdown()
+  

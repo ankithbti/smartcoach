@@ -5,6 +5,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @countTutorialsPerPage = 5
+    @tutorials_for_group = @group.tutorials.paginate(page: params[:page], per_page: 5)
+    @groups = Group.order(:name)
   end
 
   def new
