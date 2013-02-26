@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :courses, dependent: :destroy
   has_many :o_classes, :class_name => "O_Classe"
   has_many :tutorials, dependent: :destroy
+  has_many :blogs, dependent: :destroy
 
   
   before_save { |user| user.email = email.downcase }

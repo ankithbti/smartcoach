@@ -19,13 +19,13 @@
                 </li>
                 
                 <li >
-                  <%= link_to "Faq", faq_path %>
+                  <%= link_to "Faq", faqs_path %>
                 </li>
                 <% if signed_in? %>
-                  <li><%= link_to "Users", users_path %></li>
+                  
                   <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Account <b class="caret"></b>
+                    <%= gravatar_for_with_size current_user, "15x15" %> <%= current_user.name %>  <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu" id="droplinks">
                   <li><%= link_to "Profile", current_user %></li>
@@ -48,17 +48,64 @@
         </div>
     </div>
 </div>
-<center>
-	<div class="hero-unit">
-		
-	  <h1>Under Development!!!!!</h1>
-	  <p></p>
-	  	<div class="alert alert-error">
-  			Apologies!!!!! We will be finished soon!!!!!
-	  	</div>
-	    <a class="btn btn-primary btn-large">
-	      Check out our other stuff here ->
-	    </a>
-	  </p>
-	</div>
-</center>
+
+<br/><br/>
+<div class="container movedown">
+  <div class="row"  align="center">
+    <div class="span5" align="left">
+        <div class="mycarousel" align="center">
+            <div class="bs-docs-example">
+                <div id="myCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <%= image_tag "img01.jpg"%>
+                        <div class="carousel-caption">
+                          <h4>First Thumbnail label</h4>
+                          
+                        </div>
+                      </div>
+                      <div class="item">
+                        <%= image_tag "img02.jpg" %>
+                        <div class="carousel-caption">
+                          <h4>Second Thumbnail label</h4>
+                          
+                        </div>
+                      </div>
+                      <div class="item">
+                        <%= image_tag "img03.jpg"%>
+                        <div class="carousel-caption">
+                          <h4>Third Thumbnail label</h4>
+                          
+                        </div>
+                      </div>
+                      <div class="item">
+                        <%= image_tag "img04.jpg"%>
+                        <div class="carousel-caption">
+                          <h4>Fourth Thumbnail label</h4>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <%= image_tag "img04.jpg"%>
+                        <div class="carousel-caption">
+                          <h4>Fifth Thumbnail label</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                  </div>
+              <div class="clearfix"></div>
+              </div>
+          </div>
+
+
+    </div><!-- Span5 -->
+    <div class="span7 aboutHead">
+        <p>
+          We specialize in teaching of latest technologies in the comfort of your browser with video lessons, coding challenges, online classes and screencasts.
+          <br/>
+          Learn advanced courses in many technologies that we offer like Ruby, JavaScript, Ruby on Rails, Node, Git, Design, and connect with developers you admire in our popular Play by Play series.
+        </p>
+    </div>
+  </div>
+</div>

@@ -7,18 +7,19 @@
 .coachbox{
 	width:70%;
 	border-left-style: solid;
-	border-left-color: #CDB5CD;
+	border-left-color: #08C;
 	border-left-width: 5px;
 	font-family: Marcellus ;
-	background-color: #f1f1f1;
+	background-color: #fff;
 }
 
 .coachbox:hover{
-	border-left-color: #BF5FFF;
+	border-left-color: black;
 	background-color: #eee;
+	background-color: #f2f2f2;
 }
 
-.coachbox h1 span{
+.coachbox span{
 	font-family: Marcellus, "Droid Serif";
 	font-size: 20px;
 	float:left;
@@ -28,16 +29,13 @@
 	padding:0px;
 }
 
-.coachbox h1 span p{
-	font-family: "Droid Serif";
-	font-size: 10px;
-	float:left;
-	margin-top:0px;
-	margin-bottom:0px;
-	padding:0px;
-}
-
 .coachbox img{
 	float: left;
+}
+
+.coachbox span p{
+	font-family: "Droid Serif";
+	font-size: 10px;
+	color:black;
 }
 

@@ -5,6 +5,10 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
+    @countBlogsPerPage = 5
+    #@courses_for_topic = @topic.courses.paginate(page: params[:page], per_page: 5)
+    @blogs_for_tag = @tag.blogs.paginate(page: params[:page], per_page: 5)
+    @tags = Tag.order(:name)
   end
 
   def new

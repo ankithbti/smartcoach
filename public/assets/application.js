@@ -9785,7 +9785,10 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
   jQuery(function() {
     $("a[rel=popover]").popover();
     $(".tooltip").tooltip();
-    return $("a[rel=tooltip]").tooltip();
+    $("a[rel=tooltip]").tooltip();
+    return $('.carousel').carousel({
+      interval: 5000
+    });
   });
 
 }).call(this);
@@ -12853,7 +12856,8 @@ Copyright (c) 2011 by Harvest
   jQuery(function() {
     $('#course_topic_ids').chosen();
     $('#tutorial_group_ids').chosen();
-    return $('#blog_tag_ids').chosen();
+    $('#blog_tag_ids').chosen();
+    return $('.dropdown-toggle').dropdown();
   });
 
 }).call(this);
@@ -12877,7 +12881,24 @@ Copyright (c) 2011 by Harvest
 
 
 }).call(this);
+(function() {
+
+
+
+}).call(this);
 $(function(){
+
+	// $('.carousel').carousel()
+
+	$('#faqs #question').each(function() {
+  	var tis = $(this), state = false, answer =  tis.next('div').hide().css('height','auto').slideUp();
+  	tis.click(function() {
+  		state = !state;
+  		answer.slideToggle(state);
+  		tis.toggleClass('active',state);
+  		});
+  	});
+
 	$('#createCoursetop').click(function(){
 		var root = location.protocol + "//" + location.host + "/courses/new";
 		window.location = root ;

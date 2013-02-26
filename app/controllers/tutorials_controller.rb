@@ -1,8 +1,10 @@
 class TutorialsController < ApplicationController
+	before_filter :signed_in_user, only: [:create, :edit,:update,:delete]
+
 	def index
 		@countTutorialsPerPage = 5
-    	@tutorials = Tutorial.paginate(page: params[:page], per_page: 5)
-		@groups = Group.all
+    	@tutorials = Tutorial.where(ispublished: 1).paginate(page: params[:page], per_page: 5)
+		@groups = Group.order(:name)
   	end
 
 

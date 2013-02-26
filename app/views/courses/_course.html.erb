@@ -36,6 +36,7 @@
             <%= link_to "Start Course", '#', class: "btn btn-primary btn-success" %>
           <% else %>
             <%= link_to "Join to Access", signup_path , class: "btn btn-primary btn-info" %>
+            <%= link_to "SignIn to start", signin_path, class: "btn btn-primary btn-success" %>
           <% end %>
           <% if signed_in? && current_user.id == User.find_by_id(course.user_id).id %>
               <p style="float:right;margin:0px;">

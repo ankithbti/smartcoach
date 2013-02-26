@@ -19,13 +19,13 @@
                 </li>
                 
                 <li class="active">
-                  <%= link_to "Faq", faq_path %>
+                  <%= link_to "Faq", faqs_path %>
                 </li>
                 <% if signed_in? %>
-                  <li><%= link_to "Users", users_path %></li>
+                  
                   <li id="fat-menu" class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Account <b class="caret"></b>
+                    <%= gravatar_for_with_size current_user, "15x15" %> <%= current_user.name %>  <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu" id="droplinks">
                   <li><%= link_to "Profile", current_user %></li>
@@ -47,16 +47,31 @@
     </div>
 </div>
 <center>
-  <div class="hero-unit">
-    
-    <h1>Under Development!!!!!</h1>
-    <p></p>
-      <div class="alert alert-error">
-        Apologies!!!!! We will be finished soon!!!!!
-      </div>
-      <a class="btn btn-primary btn-large">
-        Check out our other stuff here ->
-      </a>
-    </p>
-  </div>
+  <div class="row">
+    <div class="container">
+      <h2>General FAQs</h2>
+      <div class="span12">
+        <div id="faqs">
+          <div id="question" align="left">
+              <i class="icon-question-sign icon-white"></i>
+              <span>Here the question will come</span>
+          </div>
+          <div id="answer" align="left">
+              <i class="icon-bullhorn icon-black"></i>
+              <span>Here the answer will come</span>
+          </div>
+
+          <div id="question" align="left">
+              <i class="icon-question-sign icon-white"></i>
+              <span>Here the question will come</span>
+          </div>
+          <div id="answer" align="left">
+              <i class="icon-bullhorn icon-black"></i>
+              <span>Here the answer will come</span>
+          </div>
+        </div><!-- <div id="faqs"> -->
+      </div><!-- <div id="span12"> -->
+    </div><!-- <div id="container"> -->
+  </div><!-- <div id="row"> -->
+  
 </center>
